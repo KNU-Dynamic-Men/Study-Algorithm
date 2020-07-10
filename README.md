@@ -26,17 +26,17 @@
 
 
 ### :rainbow: Contributors
-|      |      |      |      |
-| ---- | ---- | ---- | ---- |
-|      |      |      |      |
+| [qwlake](https://github.com/qwlake) | [이창섭](https://github.com/ventulus95) | [LimeOrangePie](https://github.com/jungin500) | [Roooqee](https://github.com/qufwnfahs) | [Roku_K](https://github.com/rokuta1059) |
+| ---- | ---- | ---- | ---- | ---- |
 
 
 
 ### :rainbow: Week Study
 
-|        | 1                                                            | 2                                                            | 3                                                            |
-| :----: | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1주차  | [방 번호](https://www.acmicpc.net/problem/1475)            | [에디터 ](https://www.acmicpc.net/problem/1406)            | |
+| | 1 | 2 | 3 | 4 |
+| :----: | --------------- | ------------- | -------------- | -------------- |
+| 1주차  | [방 번호](https://www.acmicpc.net/problem/1475)| [에디터](https://www.acmicpc.net/problem/1406) | | |
+| 2주차  | [키로거](https://www.acmicpc.net/problem/5397)| [요세푸스 문제](https://www.acmicpc.net/problem/1158) | [스택](https://www.acmicpc.net/problem/10828) | [큐](https://www.acmicpc.net/problem/10845) |
                     
 
 ### :rainbow: Additional Study
