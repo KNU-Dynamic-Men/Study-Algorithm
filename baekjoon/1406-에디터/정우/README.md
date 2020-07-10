@@ -2,7 +2,7 @@
 
 ## **1. 개요**
 
-[https://www.acmicpc.net/problem/1406](https://www.acmicpc.net/problem/1475)
+[https://www.acmicpc.net/problem/1406](https://www.acmicpc.net/problem/1406)
 
 ## **2. 코드**
 
