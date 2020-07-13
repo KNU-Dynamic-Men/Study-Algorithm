@@ -14,5 +14,3 @@ for _ in range(n):
         print(1 if len(stack) == 0 else 0)
     elif 'top' in input:
         print(stack[-1] if len(stack) != 0 else -1)
-
-print(lambda: stack[-1] if len(stack) != 0 else -1)
