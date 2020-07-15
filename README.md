@@ -37,6 +37,7 @@
 | :----: | --------------- | ------------- | -------------- | -------------- |
 | 1주차  | [방 번호](https://www.acmicpc.net/problem/1475)| [에디터](https://www.acmicpc.net/problem/1406) | | |
 | 2주차  | [키로거](https://www.acmicpc.net/problem/5397)| [요세푸스 문제](https://www.acmicpc.net/problem/1158) | [스택](https://www.acmicpc.net/problem/10828) | [큐](https://www.acmicpc.net/problem/10845) |
+| 3주차  | [탑](https://www.acmicpc.net/problem/2493) | [안정적인 문자열](https://www.acmicpc.net/problem/4889) | [AC](https://www.acmicpc.net/problem/5430) | |
                     
 
 ### :rainbow: Additional Study
