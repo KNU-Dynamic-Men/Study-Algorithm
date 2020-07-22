@@ -1,4 +1,4 @@
-import sys
+import sys, collections
 
 T = int(sys.stdin.readline().strip())
 for _ in range(T):
@@ -6,7 +6,7 @@ for _ in range(T):
     n = int(sys.stdin.readline().strip())
     x = sys.stdin.readline().strip()[1:-1]
     if x:
-        x = x.split(',')
+        x = collections.deque(x.split(','))
     else:
         x = []
 
@@ -22,13 +22,12 @@ for _ in range(T):
             elif reverse:
                 x.pop()
             else:
-                x.pop(0)
+                x.popleft()
     if error:
         print('error')
     else:
         if reverse:
-            ret = ','.join(x[::-1])
-            print(f'[{ret}]')
+            ret = ','.join(list(x)[::-1])
         else:
             ret = ','.join(x)
-            print(f'[{ret}]')
+        print(f'[{ret}]')
