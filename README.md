@@ -1,13 +1,10 @@
 # KNU-AlgorithmStudy
 
-### 알고리즘 사이트
+### :rainbow:알고리즘 사이트
 
 > 스터디는 다음 알고리즘 사이트들을 통해 진행됩니다.
 
-[SW Expert Academy](https://swexpertacademy.com/main/main.do)
-
-[BAEKJOON](https://www.acmicpc.net/)
-
+[<img src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" width="150">](https://www.acmicpc.net/) [<img src="https://swexpertacademy.com/main/images/sw_img/main_logo.png" width="170">](https://swexpertacademy.com/main/main.do)
 
 
 ## :fire:알고리즘 스터디:fire: 진행방식
@@ -24,11 +21,9 @@
 4. GitHub 레포지토리: https://github.com/KNU-Dynamic-Men/Study-Algorithm
 
 
-
 ### :rainbow: Contributors
 | [qwlake](https://github.com/qwlake) | [이창섭](https://github.com/ventulus95) | [LimeOrangePie](https://github.com/jungin500) | [Roooqee](https://github.com/qufwnfahs) | [Roku_K](https://github.com/rokuta1059) |
 | ---- | ---- | ---- | ---- | ---- |
-
 
 
 ### :rainbow: Week Study
@@ -38,13 +33,17 @@
 | 1주차  | [방 번호](https://www.acmicpc.net/problem/1475)| [에디터](https://www.acmicpc.net/problem/1406) | | |
 | 2주차  | [키로거](https://www.acmicpc.net/problem/5397)| [요세푸스 문제](https://www.acmicpc.net/problem/1158) | [스택](https://www.acmicpc.net/problem/10828) | [큐](https://www.acmicpc.net/problem/10845) |
 | 3주차  | [탑](https://www.acmicpc.net/problem/2493) | [안정적인 문자열](https://www.acmicpc.net/problem/4889) | [AC](https://www.acmicpc.net/problem/5430) | |
+| 4주차  | [불!](https://www.acmicpc.net/problem/4179) | [미로 탐색](https://www.acmicpc.net/problem/2178) | [토마토](https://www.acmicpc.net/problem/7576) | |
                     
 
 ### :rainbow: Additional Study
 
+- 선택적으로 푸는 문제들!
+- 필수 문제가 아니므로 선택적으로 풀기
+
 #### :cloud: Baekjoon
 
-|      |      |      |      |
+| [옥상 정원 꾸미기](https://www.acmicpc.net/problem/6198) | [토마토](https://www.acmicpc.net/problem/7569) |      |      |
 | ---- | ---- | ---- | ---- |
 |      |      |      |      |
 
