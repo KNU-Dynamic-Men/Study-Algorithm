@@ -10,102 +10,67 @@
 import sys
 from collections import deque
 
-def copy2d(arr):
-    return [a.copy() for a in arr]
-
-def print_maze(maze):
-    for m in maze:
-        print(m)
-    print()
-
+directions = ((1,0),(-1,0),(0,1),(0,-1))
 R, C = map(int, sys.stdin.readline().split())
 maze = [['O']*(C+2)]
 for _ in range(R):
     maze.append(list(map(str, f'O{sys.stdin.readline().strip()}O')))
 maze.append(['O']*(C+2))
-fire_maze = copy2d(maze)
-time = 0
-
-# Queue initialize
-fire_q = deque([])
+fire_q_tmp = deque([])
 jihun_q = deque([])
-for r in range(1, len(maze)):
-    for c in range(1, len(maze[0])):
+for r in range(1, len(maze)-1):
+    for c in range(1, len(maze[0])-1):
         if maze[r][c] == 'F':
-            fire_q.append([(r, c, 1),])
+            fire_q_tmp.append((r, c, 0))
         elif maze[r][c] == 'J':
-            jihun_q.append([(r, c, [(r, c)]),])
+            jihun_q.append([(r, c, 0)])
+fire_q = deque([fire_q_tmp])
 
-# Initialize the fire_maze of times for the fire to spread
-while len(fire_q) != 0:
-    popped = fire_q.popleft()
-    nxt = []
-    for r, c, d in popped:
-        if fire_maze[r+1][c] in ('.', 'J'):
-            fire_maze[r+1][c] = d
-            nxt.append((r+1, c, d+1))
-        if fire_maze[r-1][c] in ('.', 'J'):
-            fire_maze[r-1][c] = d
-            nxt.append((r-1, c, d+1))
-        if fire_maze[r][c+1] in ('.', 'J'):
-            fire_maze[r][c+1] = d
-            nxt.append((r, c+1, d+1))
-        if fire_maze[r][c-1] in ('.', 'J'):
-            fire_maze[r][c-1] = d
-            nxt.append((r, c-1, d+1))
-    if nxt:
-        fire_q.append(nxt)
-# print_maze(fire_maze)
-
-# Initialize the maze of times of the jihun to runaway
 break_flag = False
-while len(jihun_q) != 0 and not break_flag:
-    popped = jihun_q.popleft()
-    nxt = []
-    for r, c, path in popped:
-        if r in (0, len(maze)-1) or c in (0, len(maze[0])-1):
-            time = d
-            break_flag = True
-            break
-        if maze[r+1][c] in ('.', 'O'):
-            maze[r+1][c] = 'J'
-            nxt.append((r+1, c, path+[(r+1,c)]))
-        if maze[r-1][c] in ('.', 'O'):
-            maze[r-1][c] = 'J'
-            nxt.append((r-1, c, path+[(r-1,c)]))
-        if maze[r][c+1] in ('.', 'O'):
-            maze[r][c+1] = 'J'
-            nxt.append((r, c+1, path+[(r,c+1)]))
-        if maze[r][c-1] in ('.', 'O'):
-            maze[r][c-1] = 'J'
-            nxt.append((r, c-1, path+[(r,c-1)]))
-    if nxt:
-        jihun_q.append(nxt)
-# print(path)
-# print_maze(maze)
+while not break_flag:
+    if fire_q:
+        fire_popped = fire_q.popleft()
+        fire_nxt = []
+        for r, c, d in fire_popped:
+            for direction in directions:
+                if maze[r+direction[0]][c+direction[1]] in ('.','J'):
+                    maze[r+direction[0]][c+direction[1]] = 'F'
+                    fire_nxt.append((r+direction[0], c+direction[1], d+1))
+        if fire_nxt:
+            fire_q.append(fire_nxt)
 
-# Validate whether he success
-prt = ''
-for i, e in enumerate(path):
-    if fire_maze[e[0]][e[1]] == 'O':
-        prt = i
+    if jihun_q:
+        jihun_popped = jihun_q.popleft()
+        jihun_nxt = []
+        for r, c, d in jihun_popped:
+            if r in (0, len(maze)-1) or c in (0, len(maze[0])-1):
+                break_flag = True
+                print(d)
+                break
+            for direction in directions:
+                if maze[r+direction[0]][c+direction[1]] in ('.','O'):
+                    maze[r+direction[0]][c+direction[1]] = 'J'
+                    jihun_nxt.append((r+direction[0], c+direction[1], d+1))
+        if jihun_nxt:
+            jihun_q.append(jihun_nxt)
+    else:
+        print('IMPOSSIBLE')
         break
-    elif fire_maze[e[0]][e[1]] <= i:
-        prt = 'IMPOSSIBLE'
-        break
-print(prt)
 ```
 
 ## **3. 설명**
 
-1. 불이 번지는 미로와 지훈이 도망치는 미로를 따로 두고 각각 BFS 탐색.
-2. 지훈이 탈출하는 최단경로에 이미 불이 번졌다면 `IMPOSSIBLE` 출력.
-3. 끝까지 탈출 가능하다면 최단시간 출력.
+1. 불이 다음에 번질 곳을 리스트로 묶어 `fire_q`에 저장
+2. 지훈이 다음에 갈 곳을 리스트로 묶어 `jihun_q`에 저장
+3. 큐에서 각각 하나씩 꺼내어 각각 한 칸씩 진행
+4. 지훈이 가장자리에 도착하면 성공
+5. 가장자리에 도달하기 전에 큐가 비게 되면 실패
 
 ## **4. 여정**
 
 1. 메모리 초과 (어디가 문제?)
 2. 배열 따로 두고 각각 BFS 진행 -> 그래도 틀림
+3. 불, 지훈 동시 진행으로 갈아엎음 - > 성공
 
 ## **5. 결과**
-![image](https://user-images.githubusercontent.com/41278416/88792462-37f17900-d1d6-11ea-9d84-6a18c52ad897.png)
+![image](https://user-images.githubusercontent.com/41278416/88818590-d6db9c80-d1f9-11ea-866a-aaf69da735f7.png)
