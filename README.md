@@ -4,8 +4,8 @@
 
 > 스터디는 다음 알고리즘 사이트들을 통해 진행됩니다.
 
-| [<img src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" width="150">](https://www.acmicpc.net/) | [<img src="https://swexpertacademy.com/main/images/sw_img/main_logo.png" width="170">](https://swexpertacademy.com/main/main.do) |
-| :-- | :-- |
+| [<img src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" width="300">](https://www.acmicpc.net/) |
+| :-- |
 
 
 ## :fire:알고리즘 스터디:fire: 진행방식
@@ -29,13 +29,14 @@
 
 ### :rainbow: Week Study
 
-| | 1 | 2 | 3 | 4 |
-| :----: | --------------- | ------------- | -------------- | -------------- |
-| 1주차  | [방 번호](https://www.acmicpc.net/problem/1475)| [에디터](https://www.acmicpc.net/problem/1406) | | |
-| 2주차  | [키로거](https://www.acmicpc.net/problem/5397)| [요세푸스 문제](https://www.acmicpc.net/problem/1158) | [스택](https://www.acmicpc.net/problem/10828) | [큐](https://www.acmicpc.net/problem/10845) |
-| 3주차  | [탑](https://www.acmicpc.net/problem/2493) | [안정적인 문자열](https://www.acmicpc.net/problem/4889) | [AC](https://www.acmicpc.net/problem/5430) | |
-| 4주차  | [불!](https://www.acmicpc.net/problem/4179) | [미로 탐색](https://www.acmicpc.net/problem/2178) | [토마토](https://www.acmicpc.net/problem/7576) | |
-| 5주차  | [다리 만들기](https://www.acmicpc.net/problem/2146) | [단지번호붙이기](https://www.acmicpc.net/problem/2667) | [하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) | [텀 프로젝트](https://www.acmicpc.net/problem/9466) |
+| | 1 | 2 | 3 | 4 | 5 |
+| :----: | --------------- | ------------- | -------------- | -------------- | -------------- |
+| 1주차  | [방 번호](https://www.acmicpc.net/problem/1475)| [에디터](https://www.acmicpc.net/problem/1406) | | | |
+| 2주차  | [키로거](https://www.acmicpc.net/problem/5397)| [요세푸스 문제](https://www.acmicpc.net/problem/1158) | [스택](https://www.acmicpc.net/problem/10828) | [큐](https://www.acmicpc.net/problem/10845) | |
+| 3주차  | [탑](https://www.acmicpc.net/problem/2493) | [안정적인 문자열](https://www.acmicpc.net/problem/4889) | [AC](https://www.acmicpc.net/problem/5430) | | |
+| 4주차  | [불!](https://www.acmicpc.net/problem/4179) | [미로 탐색](https://www.acmicpc.net/problem/2178) | [토마토](https://www.acmicpc.net/problem/7576) | | |
+| 5주차  | [다리 만들기](https://www.acmicpc.net/problem/2146) | [단지번호붙이기](https://www.acmicpc.net/problem/2667) | [하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) | [텀 프로젝트](https://www.acmicpc.net/problem/9466) | |
+| 6주차  | [N과 M (1)](https://www.acmicpc.net/problem/15649) | [N-Queen](https://www.acmicpc.net/problem/9663) | [적록색약](https://www.acmicpc.net/problem/10026) | [Z](https://www.acmicpc.net/problem/1074) | [별 찍기 - 11](https://www.acmicpc.net/problem/2448)|
                     
 
 ### :rainbow: Additional Study
