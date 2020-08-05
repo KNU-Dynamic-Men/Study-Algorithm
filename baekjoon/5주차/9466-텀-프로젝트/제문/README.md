@@ -62,7 +62,7 @@ private fun solve(start: Int, arr: IntArray, visited: IntArray, first: IntArray)
 
 ## 3. 풀이 과정
 
-[참고] [https://code0xff.tistory.com/39](https://code0xff.tistory.com/39)
+[참고] [https://lmcoa15.tistory.com/51](https://lmcoa15.tistory.com/51)
 
 - 무식하게 풀면 쉽게 풀리지만, 배열의 길이가 `100,000`이기 때문에 알고리즘 수행시간이 `O(n^2)`이 되면 **시간 초과**로 직면한다. (실제로 그랬다.)
 
