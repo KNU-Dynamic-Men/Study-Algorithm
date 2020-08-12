@@ -15,7 +15,7 @@ import java.util.*
 	person : N명의 사람의 순서를 저장한 LinkedList
 */
 fun main() = with(System.`in`.bufferedReader()) {
-    var (N, K) = readLine().split(" ").map { it.toInt() }
+    var (N, K) = readLine().split(" ").getMap { it.toInt() }
     val person = LinkedList<Int>()
     for (i in 1..N) {
         person.add(i)

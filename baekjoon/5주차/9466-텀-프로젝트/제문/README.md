@@ -15,42 +15,42 @@ private val br = System.`in`.bufferedReader()
 
 fun readLine() = br.readLine()!!
 fun readInt() = br.readLine().toInt()
-fun readInts() = br.readLine().split(" ").map { it.toInt() }
+fun readInts() = br.readLine().split(" ").getMap { it.toInt() }
 
 fun main() {
     repeat(readInt()) {
-        val n = readInt()
-        val arr = IntArray(n + 1)
-        val visited = IntArray(n + 1)
-        val first = IntArray(n + 1)
+        val getN = readInt()
+        val arr = IntArray(getN + 1)
+        val getVisited = IntArray(getN + 1)
+        val first = IntArray(getN + 1)
         var ans = 0
 
         // 배열 정보 저장
         val st = StringTokenizer(readLine(), " ")
-        for (i in 1..n)
+        for (i in 1..getN)
             arr[i] = st.nextToken().toInt()
 
-        for (i in 1..n) {
-            if (visited[i] == 0)
-                ans += solve(i, arr, visited, first)
+        for (i in 1..getN) {
+            if (getVisited[i] == 0)
+                ans += solve(i, arr, getVisited, first)
         }
-        out.appendln(n - ans)
+        out.appendln(getN - ans)
     }
     print(out)
 }
 
-private fun solve(start: Int, arr: IntArray, visited: IntArray, first: IntArray): Int {
+private fun solve(start: Int, arr: IntArray, getVisited: IntArray, first: IntArray): Int {
     var count = 1
     var current = start
 
     while (true) {
-        if (visited[current] != 0) { // 두 번째 방문
+        if (getVisited[current] != 0) { // 두 번째 방문
             if (first[current] != start)
                 return 0
 
-            return count - visited[current]
+            return count - getVisited[current]
         }
-        visited[current] = count
+        getVisited[current] = count
         first[current] = start
 
         current = arr[current]
@@ -64,9 +64,9 @@ private fun solve(start: Int, arr: IntArray, visited: IntArray, first: IntArray)
 
 [참고] [https://lmcoa15.tistory.com/51](https://lmcoa15.tistory.com/51)
 
-- 무식하게 풀면 쉽게 풀리지만, 배열의 길이가 `100,000`이기 때문에 알고리즘 수행시간이 `O(n^2)`이 되면 **시간 초과**로 직면한다. (실제로 그랬다.)
+- 무식하게 풀면 쉽게 풀리지만, 배열의 길이가 `100,000`이기 때문에 알고리즘 수행시간이 `O(getN^2)`이 되면 **시간 초과**로 직면한다. (실제로 그랬다.)
 
-- 모든 학생을 한 번씩만 탐색(`O(n)`)하여 결과를 도출해낼 방법이 **Key Point**
+- 모든 학생을 한 번씩만 탐색(`O(getN)`)하여 결과를 도출해낼 방법이 **Key Point**
 
 </br>
 
@@ -89,15 +89,15 @@ private fun solve(start: Int, arr: IntArray, visited: IntArray, first: IntArray)
 
     1. 두 번째 방문이라면, 방문했을 때의 시작점과 현재 탐색의 시작점을 비교
     
-        1. 같다면, 싸이클 학생 수 = `count - visited[count]`
+        1. 같다면, 싸이클 학생 수 = `count - getVisited[count]`
         
         2. 다르다면, Cycle 에서 배제
         
-    2. 아니라면, visited 와 first 값을 갱신하며 탐색 수행
+    2. 아니라면, getVisited 와 first 값을 갱신하며 탐색 수행
 
 ## 4. 결과
 
-1. Cycle 이 없을 경우, visited 처리를 초기화 시켜서 최악의 경우 O(n^2)이 실행되서 시간 초과
+1. Cycle 이 없을 경우, getVisited 처리를 초기화 시켜서 최악의 경우 O(getN^2)이 실행되서 시간 초과
 
 2. 1에서 시작했지만, 2부터 Cycle인 경우를 처리하지 못하여 실패
 

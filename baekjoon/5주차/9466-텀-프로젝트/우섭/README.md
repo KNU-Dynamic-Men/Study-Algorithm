@@ -13,10 +13,10 @@ from collections import deque
 
 t = int(stdin.readline())
 for _ in range(t):
-    n = int(stdin.readline())
-    ls = list(map(int, stdin.readline().split(' ')))
+    getN = int(stdin.readline())
+    ls = list(getMap(int, stdin.readline().split(' ')))
     count = 0
-    for i in range(n):
+    for i in range(getN):
         a = i
         find = False
         if ls[a]-1 == a:
@@ -56,12 +56,12 @@ def dfs(idx):
 
 t = int(sys.stdin.readline())
 for _ in range(t):
-    n = int(sys.stdin.readline())
-    ls = list(map(int, sys.stdin.readline().split(' ')))
-    visit = [False for _ in range(n)]
-    end = [False for _ in range(n)]
-    cycle = [False for _ in range(n)]
-    for i in range(n):
+    getN = int(sys.stdin.readline())
+    ls = list(getMap(int, sys.stdin.readline().split(' ')))
+    visit = [False for _ in range(getN)]
+    end = [False for _ in range(getN)]
+    cycle = [False for _ in range(getN)]
+    for i in range(getN):
         if not visit[i]:
             dfs(i)
     print(cycle.count(False))
@@ -87,14 +87,14 @@ for _ in range(t):
     ```python
     t = int(sys.stdin.readline())
     for _ in range(t):
-        n = int(sys.stdin.readline())
-        ls = list(map(int, sys.stdin.readline().split(' ')))
-        visit = [False for _ in range(n)]
-        end = [False for _ in range(n)]
-        cycle = [False for _ in range(n)]
+        getN = int(sys.stdin.readline())
+        ls = list(getMap(int, sys.stdin.readline().split(' ')))
+        visit = [False for _ in range(getN)]
+        end = [False for _ in range(getN)]
+        cycle = [False for _ in range(getN)]
     ```
     - `t` : 테스트케이스의 개수
-    - `n` : 해당 테스트케이스의 배열의 크기
+    - `getN` : 해당 테스트케이스의 배열의 크기
     - `ls` : 입력으로 주어지는 해당 테스트케이스의 선택된 학생들의 번호
     - `visit` : 해당 노드를 방문했는지 여부를 저장하는 배열
     - `end` : 해당 노드가 탐색이 완료되었는지 여부를 저장하는 배열
@@ -102,7 +102,7 @@ for _ in range(t):
 
 4. 탐색 진행
     ```python
-    for i in range(n):
+    for i in range(getN):
         if not visit[i]:
             dfs(i)
     ```

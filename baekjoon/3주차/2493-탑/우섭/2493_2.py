@@ -1,10 +1,10 @@
 from sys import stdin
 
-n = int(stdin.readline())
-tower = list(map(int, stdin.readline().split(' ')))
+getN = int(stdin.readline())
+tower = list(getMap(int, stdin.readline().split(' ')))
 ans = []
 stack = []
-for i in range(n):
+for i in range(getN):
     while stack:
         if stack[-1][1] > tower[i]:
             ans.append(stack[-1][0] + 1)

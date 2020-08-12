@@ -1,14 +1,14 @@
 from collections import deque
 from sys import stdin
 
-R, C = map(int, stdin.readline().split())
+R, C = getMap(int, stdin.readline().split())
 stage = []
 fi = [[0]*C for _ in range(R)]
 pi = [[0]*C for _ in range(R)]
 fi_q = deque()
 pi_q = deque()
-dx = [1, 0, -1, 0]
-dy = [0, 1, 0, -1]
+getDx = [1, 0, -1, 0]
+getDy = [0, 1, 0, -1]
 
 def read_stage():
     for _ in range(R):
@@ -27,8 +27,8 @@ def fire_dfs():
     while(fi_q):
         cur = fi_q.popleft()
         for i in range(4):
-            nx = cur[0] + dx[i]
-            ny = cur[1] + dy[i]
+            nx = cur[0] + getDx[i]
+            ny = cur[1] + getDy[i]
             if nx < 0 or nx >= R or ny < 0 or ny >= C:
                 continue
             if fi[nx][ny] > 0 or stage[nx][ny] == '#':
@@ -40,8 +40,8 @@ def people_dfs():
     while(pi_q):
         cur = pi_q.popleft()
         for i in range(4):
-            nx = cur[0] + dx[i]
-            ny = cur[1] + dy[i]
+            nx = cur[0] + getDx[i]
+            ny = cur[1] + getDy[i]
             if nx < 0 or nx >= R or ny < 0 or ny >= C:
                 return pi[cur[0]][cur[1]]
             if pi[nx][ny] > 0 or stage[nx][ny] == '#':

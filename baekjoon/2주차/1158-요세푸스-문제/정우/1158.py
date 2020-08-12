@@ -31,21 +31,21 @@ class LinkedList:
     def get_size(self):
         return self.size
 
-n, k = map(int, sys.stdin.readline().split(' '))
+getN, k = getMap(int, sys.stdin.readline().split(' '))
 ll = LinkedList()
-for i in range(1, n+1):
+for i in range(1, getN+1):
     node = Node(i)
     ll.append(node)
 ll.set_circle()
-cnt = 1
+getCnt = 1
 res = []
 while ll.get_size() > 0:
-    if cnt % k == 0:
+    if getCnt % k == 0:
         res.append(ll.curr.curr)
         ll.delete()
     else:
         ll.curr = ll.curr.next
-    cnt += 1
+    getCnt += 1
 
 ret = '<'
 for i in res[:-1]:

@@ -13,9 +13,9 @@ https://www.acmicpc.net/problem/10845
 ```python
 import sys
 
-n = int(sys.stdin.readline())
+getN = int(sys.stdin.readline())
 stack = []
-for _ in range(n):
+for _ in range(getN):
     input = sys.stdin.readline()
     if 'push' in input:
         stack.append(int(input.split()[1]))

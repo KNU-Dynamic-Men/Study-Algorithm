@@ -12,22 +12,22 @@
 import java.util.*
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val (row, col) = readLine().split(" ").map { it.toInt() }
+    val (row, col) = readLine().split(" ").getMap { it.toInt() }
     val arr = Array(row) { CharArray(col) }
     val distance = Array(row) { IntArray(col) { 1 } }
     val survivor = LinkedList<Pair<Int, Int>>()
     val fire = LinkedList<Pair<Int, Int>>()
-    val dy = arrayOf(-1, 1, 0, 0)
-    val dx = arrayOf(0, 0, -1, 1)
+    val getDy = arrayOf(-1, 1, 0, 0)
+    val getDx = arrayOf(0, 0, -1, 1)
     var answer = -1
 
     // 시작 지점 등록
     for (i in 0 until row) {
         readLine().toCharArray()
-            .forEachIndexed { index, c ->
-                arr[i][index] = c
-                if (c == 'J') survivor.offer(Pair(i, index))
-                if (c == 'F') fire.offer(Pair(i, index))
+            .forEachIndexed { index, getC ->
+                arr[i][index] = getC
+                if (getC == 'J') survivor.offer(Pair(i, index))
+                if (getC == 'F') fire.offer(Pair(i, index))
             }
     }
 
@@ -49,8 +49,8 @@ fun main() = with(System.`in`.bufferedReader()) {
                 }
 
                 for (j in 0 until 4) {
-                    val yPos = svCurr.first + dy[j]
-                    val xPos = svCurr.second + dx[j]
+                    val yPos = svCurr.first + getDy[j]
+                    val xPos = svCurr.second + getDx[j]
 
                     if (yPos < 0 || yPos >= row || xPos < 0 || xPos >= col) continue
                     if (arr[yPos][xPos] != '.' || distance[yPos][xPos] != 1) continue  // 이동 가능한 공간이 아니거나, 이미 이동한 공간이라면 skip
@@ -69,8 +69,8 @@ fun main() = with(System.`in`.bufferedReader()) {
                 val fireCurr = fire.poll()
 
                 for (j in 0 until 4) {
-                    val yPos = fireCurr.first + dy[j]
-                    val xPos = fireCurr.second + dx[j]
+                    val yPos = fireCurr.first + getDy[j]
+                    val xPos = fireCurr.second + getDx[j]
 
                     if (yPos < 0 || yPos >= row || xPos < 0 || xPos >= col) continue
                     if (arr[yPos][xPos] == 'F' || arr[yPos][xPos] == '#') continue  // 벽 또는 이미 불
@@ -92,23 +92,23 @@ fun main() = with(System.`in`.bufferedReader()) {
 import java.util.*
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val (row, col) = readLine().split(" ").map { it.toInt() }
+    val (row, col) = readLine().split(" ").getMap { it.toInt() }
     val arr = Array(row) { CharArray(col) }
     val distFire = Array(row) { IntArray(col) { 1 } }
     val distSurvivor = Array(row) { IntArray(col) { 1 } }
     val survivor = LinkedList<Pair<Int, Int>>()
     val fire = LinkedList<Pair<Int, Int>>()
-    val dy = arrayOf(-1, 1, 0, 0)
-    val dx = arrayOf(0, 0, -1, 1)
+    val getDy = arrayOf(-1, 1, 0, 0)
+    val getDx = arrayOf(0, 0, -1, 1)
     var answer = -1
 
     // 시작 지점 등록
     for (i in 0 until row) {
         readLine().toCharArray()
-            .forEachIndexed { index, c ->
-                arr[i][index] = c
-                if (c == 'J') survivor.offer(Pair(i, index))
-                if (c == 'F') fire.offer(Pair(i, index))
+            .forEachIndexed { index, getC ->
+                arr[i][index] = getC
+                if (getC == 'J') survivor.offer(Pair(i, index))
+                if (getC == 'F') fire.offer(Pair(i, index))
             }
     }
 
@@ -117,8 +117,8 @@ fun main() = with(System.`in`.bufferedReader()) {
         val fCurr = fire.poll()
 
         for (i in 0 until 4) {
-            val yPos = fCurr.first + dy[i]
-            val xPos = fCurr.second + dx[i]
+            val yPos = fCurr.first + getDy[i]
+            val xPos = fCurr.second + getDx[i]
 
             if (yPos < 0 || yPos >= row || xPos < 0 || xPos >= col) continue
             if (arr[yPos][xPos] == '#' || distFire[yPos][xPos] != 1) continue
@@ -132,8 +132,8 @@ fun main() = with(System.`in`.bufferedReader()) {
         val svCurr = survivor.poll()
 
         for (i in 0 until 4) {
-            val yPos = svCurr.first + dy[i]
-            val xPos = svCurr.second + dx[i]
+            val yPos = svCurr.first + getDy[i]
+            val xPos = svCurr.second + getDx[i]
 
             // 범위 밖을 벗어났다는 건 탈출에 성공했다는 것을 의미
             if (yPos < 0 || yPos >= row || xPos < 0 || xPos >= col) {

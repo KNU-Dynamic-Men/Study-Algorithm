@@ -13,15 +13,15 @@ import sys
 
 T = int(sys.stdin.readline())
 for _ in range(T):
-    n = int(sys.stdin.readline())
-    arr = list(map(int, sys.stdin.readline().split()))
+    getN = int(sys.stdin.readline())
+    arr = list(getMap(int, sys.stdin.readline().split()))
 
     dic = dict()
-    for i in range(1, n+1):
+    for i in range(1, getN+1):
         dic[i] = arr[i-1]
 
     looser_cnt = 0
-    for i in range(1, n+1):
+    for i in range(1, getN+1):
         x = i
         can_loosers = []
         is_looser = True

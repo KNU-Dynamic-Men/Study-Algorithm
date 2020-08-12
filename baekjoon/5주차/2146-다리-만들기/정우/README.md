@@ -32,14 +32,14 @@ def get_edges(arr, i, j):
     q = deque([[(i, j)]])
     while len(q) != 0:
         popped = q.popleft()
-        for r, c in popped:
-            if is_edge(arr, r, c):
-                res.append((r, c))
+        for getR, getC in popped:
+            if is_edge(arr, getR, getC):
+                res.append((getR, getC))
             nxt = []
             for d_r, d_c in dirs:
-                if arr[r+d_r][c+d_c] == 1:
-                    arr[r+d_r][c+d_c] = 2
-                    nxt.append((r+d_r, c+d_c))
+                if arr[getR+d_r][getC+d_c] == 1:
+                    arr[getR+d_r][getC+d_c] = 2
+                    nxt.append((getR+d_r, getC+d_c))
             if nxt:
                 q.append(nxt)
     return res
@@ -47,7 +47,7 @@ def get_edges(arr, i, j):
 N = int(sys.stdin.readline())
 arr = [[3] * (N+2)]
 for _ in range(N):
-    arr.append(list(map(int, f'3 {sys.stdin.readline()} 3'.split())))
+    arr.append(list(getMap(int, f'3 {sys.stdin.readline()} 3'.split())))
 arr.append([3] * (N+2))
 # print(arr)
 

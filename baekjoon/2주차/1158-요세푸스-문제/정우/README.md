@@ -41,21 +41,21 @@ class LinkedList:
     def get_size(self):
         return self.size
 
-n, k = map(int, sys.stdin.readline().split(' '))
+getN, k = getMap(int, sys.stdin.readline().split(' '))
 ll = LinkedList()
-for i in range(1, n+1):
+for i in range(1, getN+1):
     node = Node(i)
     ll.append(node)
 ll.set_circle()
-cnt = 1
+getCnt = 1
 res = []
 while ll.get_size() > 0:
-    if cnt % k == 0:
+    if getCnt % k == 0:
         res.append(ll.curr.curr)
         ll.delete()
     else:
         ll.curr = ll.curr.next
-    cnt += 1
+    getCnt += 1
 
 ret = '<'
 for i in res[:-1]:
@@ -68,8 +68,8 @@ print(ret)
 ```python
 import sys
 
-n, k = map(int, sys.stdin.readline().split(' '))
-arr = list(range(1, n+1))
+getN, k = getMap(int, sys.stdin.readline().split(' '))
+arr = list(range(1, getN+1))
 res = list()
 idx = k-1
 while len(arr) > 0:
@@ -91,7 +91,7 @@ Linked List (통과 못함)
 1. 순환형 Linked List를 만들고 하나씩 옮겨 탐색하며 `k`번째 마다 pop
 
 Array
-1. Array에 1부터 `n`까지의 수를 전부 넣어 초기화.
+1. Array에 1부터 `getN`까지의 수를 전부 넣어 초기화.
 2. Array의 `k*m`번째 인덱스에 있는 원소를 pop. (m=1 to 순환횟수)
 
 ## **4. 여정**

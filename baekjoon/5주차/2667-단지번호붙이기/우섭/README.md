@@ -10,27 +10,27 @@ https://www.acmicpc.net/problem/2667
 from sys import stdin
 from collections import deque
 
-n = int(stdin.readline())
+getN = int(stdin.readline())
 maze = []
-for _ in range(n):
-    maze.append(list(map(int, stdin.readline().rstrip())))
-stage = [[0]*n for _ in range(n)]
+for _ in range(getN):
+    maze.append(list(getMap(int, stdin.readline().rstrip())))
+stage = [[0]*getN for _ in range(getN)]
 search = deque()
 length = []
-dx = [1, 0, -1, 0]
-dy = [0, 1, 0, -1]
-for i in range(n):
-    for j in range(n):
+getDx = [1, 0, -1, 0]
+getDy = [0, 1, 0, -1]
+for i in range(getN):
+    for j in range(getN):
         if maze[i][j] == 1 and stage[i][j] == 0:
             search.append([i, j])
             stage[i][j] = 1
             count = 1
             while(search):
-                x, y = map(int, search.popleft())
+                x, y = getMap(int, search.popleft())
                 for k in range(4):
-                    nx = x + dx[k]
-                    ny = y + dy[k]
-                    if nx < 0 or nx >= n or ny < 0 or ny >= n: continue
+                    nx = x + getDx[k]
+                    ny = y + getDy[k]
+                    if nx < 0 or nx >= getN or ny < 0 or ny >= getN: continue
                     if maze[nx][ny] == 0 or stage[nx][ny] == 1: continue
                     search.append([nx, ny])
                     stage[nx][ny] = 1
@@ -62,8 +62,8 @@ for i in length:
     ```
     - `x, y`를 `deque` 배열인 `search`에서 가장 왼쪽인 값을 `popleft()`한 경우 **BFS**로 탐색하게 되고, 가장 오른쪽인 값을 `pop()`한 경우 **DFS**로 탐색하게 된다
     ```python
-    x, y = map(int, search.popleft())   # BFS의 경우
-    x, y = map(int, search.pop())       # DFS의 경우
+    x, y = getMap(int, search.popleft())   # BFS의 경우
+    x, y = getMap(int, search.pop())       # DFS의 경우
     ```
     - 탐색이 완료되면 해당 단지의 크기를 length 배열에 추가하고 다음 주택을 찾는다
     ```python

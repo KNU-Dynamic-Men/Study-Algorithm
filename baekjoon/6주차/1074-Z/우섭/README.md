@@ -7,7 +7,7 @@ https://www.acmicpc.net/problem/1074
 ## 2. 코드
 ```python
 from sys import stdin
-n, r, c = map(int, stdin.readline().split(' '))
+getN, getR, getC = getMap(int, stdin.readline().split(' '))
 
 # k = 시작점 값
 # t = 변의 길이
@@ -25,7 +25,7 @@ def findz(x, y, k, t):
     else:
         return findz(x - half, y - half, k + ((half)**2)*3, half)
 
-print(findz(r, c, 0, 2**n))
+print(findz(getR, getC, 0, 2**getN))
 ```
 
 ## 3. 설명
@@ -42,7 +42,7 @@ print(findz(r, c, 0, 2**n))
     - x: 계산하려는 X 좌표 (세로)
     - y: 계산하려는 Y 좌표 (가로)
     - 해당 문제의 좌표는 왼쪽 위가 (0,0)으로 설정되어 있다
-    - (r, c)의 경우, 아래쪽으로 r만큼, 오른쪽으로 c만큼 이동 후 해당 좌표의 순서를 출력하게 된다
+    - (getR, getC)의 경우, 아래쪽으로 r만큼, 오른쪽으로 c만큼 이동 후 해당 좌표의 순서를 출력하게 된다
     - k: 현재 계산하려는 첫 번째 좌표의 방문순서
     - t: 현재 계산중인 변의 크기
 

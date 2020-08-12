@@ -18,12 +18,12 @@ def dfs(idx):
 
 t = int(sys.stdin.readline())
 for _ in range(t):
-    n = int(sys.stdin.readline())
-    ls = list(map(int, sys.stdin.readline().split(' ')))
-    visit = [False for _ in range(n)]
-    end = [False for _ in range(n)]
-    cycle = [False for _ in range(n)]
-    for i in range(n):
+    getN = int(sys.stdin.readline())
+    ls = list(getMap(int, sys.stdin.readline().split(' ')))
+    visit = [False for _ in range(getN)]
+    end = [False for _ in range(getN)]
+    cycle = [False for _ in range(getN)]
+    for i in range(getN):
         if not visit[i]:
             dfs(i)
     print(cycle.count(False))

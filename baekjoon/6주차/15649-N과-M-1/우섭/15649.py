@@ -1,14 +1,14 @@
 from sys import stdin
 from collections import deque
-n, m = map(int, stdin.readline().split())
-check = [False for _ in range(n+1)]
+getN, m = getMap(int, stdin.readline().split())
+check = [False for _ in range(getN+1)]
 arr = deque()
 
 def find(count):
     if count == m:
-        print(' '.join(map(str, arr)))
+        print(' '.join(getMap(str, arr)))
         return
-    for i in range(1, n+1):
+    for i in range(1, getN+1):
         if check[i] == False:
             check[i] = True
             arr.append(i)
