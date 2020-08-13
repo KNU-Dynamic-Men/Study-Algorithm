@@ -37,6 +37,7 @@
 | 4주차  | [불!](https://www.acmicpc.net/problem/4179) | [미로 탐색](https://www.acmicpc.net/problem/2178) | [토마토](https://www.acmicpc.net/problem/7576) | | |
 | 5주차  | [다리 만들기](https://www.acmicpc.net/problem/2146) | [단지번호붙이기](https://www.acmicpc.net/problem/2667) | [하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) | [텀 프로젝트](https://www.acmicpc.net/problem/9466) | |
 | 6주차  | [N과 M (1)](https://www.acmicpc.net/problem/15649) | [N-Queen](https://www.acmicpc.net/problem/9663) | [적록색약](https://www.acmicpc.net/problem/10026) | [Z](https://www.acmicpc.net/problem/1074) | [별 찍기 - 11](https://www.acmicpc.net/problem/2448)|
+| 7주차 | [비숍](https://www.acmicpc.net/problem/1799) | [부분수열의 합](https://www.acmicpc.net/problem/1182) | [별 찍기 - 10](https://www.acmicpc.net/problem/2447) | | |
                     
 
 ### :rainbow: Additional Study
@@ -46,7 +47,7 @@
 
 #### :cloud: Baekjoon
 
-| [옥상 정원 꾸미기](https://www.acmicpc.net/problem/6198) | [토마토](https://www.acmicpc.net/problem/7569) |      |      |
+| [옥상 정원 꾸미기](https://www.acmicpc.net/problem/6198) | [토마토](https://www.acmicpc.net/problem/7569) | [곱셈](https://www.acmicpc.net/problem/1629) |      |
 | ---- | ---- | ---- | ---- |
 |      |      |      |      |
 
