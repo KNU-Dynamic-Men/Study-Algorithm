@@ -9,22 +9,22 @@ https://www.acmicpc.net/problem/9663
 - **PyPy3**로 제출
 ```python
 from sys import stdin
-n = int(stdin.readline())
+getN = int(stdin.readline())
 ans = 0
-hor = [False]*n
-croleft = [False]*(2*n-1)
-croright = [False]*(2*n-1)
+hor = [False]*getN
+croleft = [False]*(2*getN-1)
+croright = [False]*(2*getN-1)
 
 def find(t):
-    if t == n:
+    if t == getN:
         global ans
         ans += 1
         return
-    for i in range(n):
-        if hor[i] or croleft[i + t] or croright[t - i + n - 1]: continue
-        hor[i] = croleft[i + t] = croright[t - i + n - 1] = True
+    for i in range(getN):
+        if hor[i] or croleft[i + t] or croright[t - i + getN - 1]: continue
+        hor[i] = croleft[i + t] = croright[t - i + getN - 1] = True
         find(t+1)
-        hor[i] = croleft[i + t] = croright[t - i + n - 1] = False
+        hor[i] = croleft[i + t] = croright[t - i + getN - 1] = False
 
 find(0)
 print(ans)
@@ -42,22 +42,22 @@ print(ans)
 2. 구현
 
     ```python
-    hor = [False]*n
-    croleft = [False]*(2*n-1)
-    croright = [False]*(2*n-1)
+    hor = [False]*getN
+    croleft = [False]*(2*getN-1)
+    croright = [False]*(2*getN-1)
     ```
     - `hor`: 세로 기준 퀸이 있을 수 있는 위치
     - `croleft`: 왼쪽 아래 방향 대각선 기준
     - `croright`: 오른쪽 아래 방향 대각선 기준
 
     ```python
-    for i in range(n):
-        if hor[i] or croleft[i + t] or croright[t - i + n - 1]: continue
-        hor[i] = croleft[i + t] = croright[t - i + n - 1] = True
+    for i in range(getN):
+        if hor[i] or croleft[i + t] or croright[t - i + getN - 1]: continue
+        hor[i] = croleft[i + t] = croright[t - i + getN - 1] = True
         find(t+1)
-        hor[i] = croleft[i + t] = croright[t - i + n - 1] = False
+        hor[i] = croleft[i + t] = croright[t - i + getN - 1] = False
     ```
-    - 가로줄 기준 하나의 퀸만 존재할 수 있으므로 `n`개 좌표 기준으로 탐색한다
+    - 가로줄 기준 하나의 퀸만 존재할 수 있으므로 `getN`개 좌표 기준으로 탐색한다
     - 세로, 대각선 위치에 퀸이 존재하는 경우 다음 좌표를 탐색한다
     - 퀸이 놓아지는 자리와 퀸이 이동 가능한 좌표의 값을 `True`로 바꾸어준다
     - 재귀를 이용하여 다음 좌표를 탐색한다

@@ -3,10 +3,10 @@ from collections import deque
 
 t = int(stdin.readline())
 for _ in range(t):
-    n = int(stdin.readline())
-    ls = list(map(int, stdin.readline().split(' ')))
+    getN = int(stdin.readline())
+    ls = list(getMap(int, stdin.readline().split(' ')))
     count = 0
-    for i in range(n):
+    for i in range(getN):
         a = i
         find = False
         if ls[a]-1 == a:

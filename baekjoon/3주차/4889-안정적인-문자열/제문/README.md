@@ -20,24 +20,24 @@ fun main() = with(System.`in`.bufferedReader()) {
             break
 
         var braceCount = 0  // 괄호
-        var cnt = 0         // 바꾸는 연산 횟수
+        var getCnt = 0         // 바꾸는 연산 횟수
 
-        for (c in str) {
-            when (c) {
+        for (getC in str) {
+            when (getC) {
                 '}' -> braceCount--
                 '{' -> braceCount++
             }
 
             if (braceCount < 0) {
-                cnt++
+                getCnt++
                 braceCount = -braceCount
             }
         }
 
         if (braceCount != 0)
-            cnt += braceCount / 2
+            getCnt += braceCount / 2
 
-        out.appendln("${caseCount++}. $cnt")
+        out.appendln("${caseCount++}. $getCnt")
     }
 
     print(out)
@@ -58,23 +58,23 @@ fun main() = with(System.`in`.bufferedReader()) {
         if (str.startsWith("-"))
             break
 
-        var cnt = 0
+        var getCnt = 0
         val stack = Stack<Char>()
 
-        for (c in str) {
-            when (c) {
-                '{' -> stack.push(c)
+        for (getC in str) {
+            when (getC) {
+                '{' -> stack.push(getC)
                 '}' -> {
                     if (stack.isNotEmpty()) stack.pop()
                     else {
-                        cnt++
+                        getCnt++
                         stack.push('{')
                     }
                 }
             }
         }
-        cnt += stack.size / 2
-        out.appendln("${caseNum++}. $cnt")
+        getCnt += stack.size / 2
+        out.appendln("${caseNum++}. $getCnt")
     }
     print(out)
 }
@@ -86,7 +86,7 @@ fun main() = with(System.`in`.bufferedReader()) {
 
 - 선형 탐색 중에 `'{'`이라면 **+1**, `'}'`이라면 **-1** 을 연산한다면 계산 값이 도중 음수가 된다면 안정적인 괄호쌍이 발생했다고 볼 수 있다.
 
-- 이 점을 이용하여 음수가 됬을 시 `cnt` 를 **1** 증가
+- 이 점을 이용하여 음수가 됬을 시 `getCnt` 를 **1** 증가
 
 ### 3-2 스택
 
@@ -96,11 +96,11 @@ fun main() = with(System.`in`.bufferedReader()) {
     
     2. `'}'`일 때 
     
-        1. Stack이 비어있다면 올바르지 않은 괄호쌍이므로 `'{'`로 바꿔 스택에 추가시킨다. 동시에 `cnt` 도 1 증가
+        1. Stack이 비어있다면 올바르지 않은 괄호쌍이므로 `'{'`로 바꿔 스택에 추가시킨다. 동시에 `getCnt` 도 1 증가
         
         2. Stack이 비어있지 않다면 올바른 괄호쌍이 매칭된 것이므로 `pop()`
         
-    3. 탐색을 마치고 난 후 `cnt += Stack.size() / 2` 
+    3. 탐색을 마치고 난 후 `getCnt += Stack.size() / 2` 
     
 - **더 직관적인 문제 풀이가 가능했다.**
 

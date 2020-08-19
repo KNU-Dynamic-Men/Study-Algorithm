@@ -1,8 +1,8 @@
 import sys
 
-n = int(sys.stdin.readline().strip())
+getN = int(sys.stdin.readline().strip())
 arr = []
-for _ in range(n):
+for _ in range(getN):
     line = sys.stdin.readline().strip().split(' ')
     if line[0] == 'push':
         arr.append(line[1])

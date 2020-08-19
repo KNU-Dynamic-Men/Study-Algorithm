@@ -19,37 +19,37 @@ import java.util.StringTokenizer;
 
 public class Main {
 
-	static int[][] map, visited;
-	static int[] dx = {-1,0,1,0};
-	static int[] dy = {0,1,0,-1};
+	static int[][] getMap, getVisited;
+	static int[] getDx = {-1,0,1,0};
+	static int[] getDy = {0,1,0,-1};
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String tc = br.readLine();
 		StringTokenizer st = new StringTokenizer (tc , " ");
-		int r = Integer.parseInt(st.nextToken());
-		int c = Integer.parseInt(st.nextToken());
-		map = new int[r][c];
-		visited = new int[r][c];
+		int getR = Integer.parseInt(st.nextToken());
+		int getC = Integer.parseInt(st.nextToken());
+		getMap = new int[getR][getC];
+		getVisited = new int[getR][getC];
 		Queue<Node4179> jq = new LinkedList<>();
 		Queue<Node4179> fq = new LinkedList<>();
-		for(int i=0; i<r; i++){
+		for(int i=0; i<getR; i++){
 			String t = br.readLine();
-			for(int j=0; j<c; j++){
+			for(int j=0; j<getC; j++){
 				char temp = t.charAt(j);
 				if(temp=='#'){
-					map[i][j] = -1;
+					getMap[i][j] = -1;
 				}
 				else if (temp=='J'){
-					map[i][j] = 1;
+					getMap[i][j] = 1;
 					jq.add(new Node4179(i,j));
 				}
 				else if(temp == 'F'){
-					map[i][j] = -2;
+					getMap[i][j] = -2;
 					fq.add(new Node4179(i, j));
 				}
 				else{
-					map[i][j] = 0;
+					getMap[i][j] = 0;
 				}
 			}
 		}
@@ -63,10 +63,10 @@ public class Main {
 				int y = node.y;
 				int x = node.x;
 				for(int i=0; i<4; i++){
-					if (x+dx[i] >= 0 && x+dx[i] < c && y+dy[i]> 0 && y+dy[i] < r){
-						if(map[y+dy[i]][x+dx[i]] >=0){
-							fq.add(new Node4179(y+dy[i], x+dx[i]));
-							map[y+dy[i]][x+dx[i]] = -2;
+					if (x+getDx[i] >= 0 && x+getDx[i] < getC && y+getDy[i]> 0 && y+getDy[i] < getR){
+						if(getMap[y+getDy[i]][x+getDx[i]] >=0){
+							fq.add(new Node4179(y+getDy[i], x+getDx[i]));
+							getMap[y+getDy[i]][x+getDx[i]] = -2;
 						}
 					}
 				}
@@ -78,13 +78,13 @@ public class Main {
 				int y = node.y;
 				int x = node.x;
 				for(int i=0; i<4; i++){
-					if (x+dx[i] < 0 || x+dx[i] >= c || y+dy[i]< 0 || y+dy[i] >= r){
+					if (x+getDx[i] < 0 || x+getDx[i] >= getC || y+getDy[i]< 0 || y+getDy[i] >= getR){
 						System.out.println(answer);
 						return;
 					}
-					if(map[y+dy[i]][x+dx[i]] ==0){
-						jq.add(new Node4179(y+dy[i], x+dx[i]));
-						map[y+dy[i]][x+dx[i]] = 1;
+					if(getMap[y+getDy[i]][x+getDx[i]] ==0){
+						jq.add(new Node4179(y+getDy[i], x+getDx[i]));
+						getMap[y+getDy[i]][x+getDx[i]] = 1;
 					}
 				}
 			}

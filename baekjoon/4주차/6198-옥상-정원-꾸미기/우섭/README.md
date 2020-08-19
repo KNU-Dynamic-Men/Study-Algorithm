@@ -9,13 +9,13 @@ https://www.acmicpc.net/problem/6198
 ```python
 from sys import stdin
 
-n = int(stdin.readline())
+getN = int(stdin.readline())
 a = 0
 tower = []
 stack = []
-for _ in range(n):
+for _ in range(getN):
     tower.append(int(stdin.readline()))
-for i in range(n):
+for i in range(getN):
     while(stack):
         if stack[-1] <= tower[i]:
             stack.pop()
@@ -42,7 +42,7 @@ print(a)
     - 즉 `stack`의 크기는 **해당 빌딩의 옥상을 볼 수 있는 빌딩의 수**가 된다
     - 탐색 완료 시 `stack`에 현재 빌딩의 높이를 저장하고 다음 탐색을 진행한다
     ```python
-    for i in range(n):
+    for i in range(getN):
     while(stack):
         if stack[-1] <= tower[i]:
             stack.pop()

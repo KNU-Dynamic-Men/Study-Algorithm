@@ -25,11 +25,11 @@ def printer(card, is_reverse):
         tmp = '[]'
     print(tmp)
 
-n = int(sys.stdin.readline())
-for _ in range(n):
-    command = list(sys.stdin.readline().strip('\n'))
+getN = int(sys.stdin.readline())
+for _ in range(getN):
+    command = list(sys.stdin.readline().strip('\getN'))
     length = int(sys.stdin.readline())
-    card = sys.stdin.readline().lstrip('[').rstrip('\n').rstrip(']').split(',')
+    card = sys.stdin.readline().lstrip('[').rstrip('\getN').rstrip(']').split(',')
     if card[0] == '':
         card.pop()
     is_reverse = False
@@ -63,9 +63,9 @@ for _ in range(n):
 2. 입력받기
 
     ```python
-    command = list(sys.stdin.readline().strip('\n'))
+    command = list(sys.stdin.readline().strip('\getN'))
     length = int(sys.stdin.readline())
-    card = sys.stdin.readline().lstrip('[').rstrip('\n').rstrip(']').split(',')
+    card = sys.stdin.readline().lstrip('[').rstrip('\getN').rstrip(']').split(',')
     ```
     - 매번 읽을 때 **개행문자를 조심하도록 하자**
     - ```strip()```, ```lstrip('')```, ```rstrip('')``` 등을 활용하여 문자열을 전처리 후 ```list``` 타입으로 저장한다.
@@ -153,8 +153,8 @@ for _ in range(n):
     [
     ]
     ```
-    - 문자열 입력 시 ```[, ], \n```등의 문자가 제대로 사라지지 않고 그대로 읽어들이게 되고, 이를 배열에 넣게 되어 문제 발생
-    - 어째서인지 ```strip(']')```가 정상적으로 작동하지 않아 ```lstrip('[').rstrip('\n').rstrip(']')``` 와 같이 수정하여 구현
+    - 문자열 입력 시 ```[, ], \getN```등의 문자가 제대로 사라지지 않고 그대로 읽어들이게 되고, 이를 배열에 넣게 되어 문제 발생
+    - 어째서인지 ```strip(']')```가 정상적으로 작동하지 않아 ```lstrip('[').rstrip('\getN').rstrip(']')``` 와 같이 수정하여 구현
 
 3. 이상한 입력 값 상태
 

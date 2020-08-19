@@ -1,5 +1,5 @@
 from sys import stdin
-n, r, c = map(int, stdin.readline().split(' '))
+getN, getR, getC = getMap(int, stdin.readline().split(' '))
 
 # k = 시작점 값
 # t = 변의 길이
@@ -17,4 +17,4 @@ def findz(x, y, k, t):
     else:
         return findz(x - half, y - half, k + ((half)**2)*3, half)
 
-print(findz(r, c, 0, 2**n))
+print(findz(getR, getC, 0, 2**getN))

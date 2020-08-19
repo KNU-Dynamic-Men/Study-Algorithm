@@ -15,13 +15,13 @@ fun main() = with(System.`in`.bufferedReader()) {
     // 코틀린은 [name]@ 방식으로 label 명명이 가능
     loop@for (i in 1..readLine().toInt()) {
         val function = readLine()
-        val n = readLine().toInt()
+        val getN = readLine().toInt()
         val arr = readLine()
         val deque = ArrayDeque<Int>()
         var direction = true // true : 정방향, false : 역방향
 
-        if (n != 0)
-            deque.addAll(arr.substring(1, arr.length-1).split(",").map { it.toInt() })
+        if (getN != 0)
+            deque.addAll(arr.substring(1, arr.length-1).split(",").getMap { it.toInt() })
 
         for (command in function) {
             when (command) {
@@ -59,7 +59,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     
 - 코틀린의 `@Label` 기능을 사용하여 error가 발생했는 지에 대한 **Boolean 변수**를 사용하지 않고 **루프를 탈출**
 
-- 에러 방지를 위해 **n** 이 **0**인 경우를 제외하고 **Deque** 에 정보 저장
+- 에러 방지를 위해 **getN** 이 **0**인 경우를 제외하고 **Deque** 에 정보 저장
 
 - `joinToString()` 을 이용하여 쉽게 출력
 

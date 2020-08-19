@@ -1,7 +1,7 @@
 import sys
 
 tower_count = int(sys.stdin.readline().rstrip())
-towers = list(map(int, sys.stdin.readline().split()))
+towers = list(getMap(int, sys.stdin.readline().split()))
 tower_stack = list()
 
 tower_length_list = []
@@ -20,4 +20,4 @@ for tower_id in range(tower_count):
 
     tower_stack.append(tower_item)
 
-print(' '.join(list(map(str, tower_length_list))), end='', flush=True)
+print(' '.join(list(getMap(str, tower_length_list))), end='', flush=True)

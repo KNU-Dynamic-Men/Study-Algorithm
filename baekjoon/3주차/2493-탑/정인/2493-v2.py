@@ -1,7 +1,7 @@
 import sys
 
 sys.stdin.readline()
-tower_input = list(enumerate(map(int, sys.stdin.readline().split())))[::-1]
+tower_input = list(enumerate(getMap(int, sys.stdin.readline().split())))[::-1]
 
 lazer_reach_table = [0] * len(tower_input)
 tower_list = [tower_input.pop(0)]
@@ -13,4 +13,4 @@ for tower_item in tower_input:
         tower_list.pop()
     tower_list.append(tower_item)
 
-print(' '.join(list(map(str, lazer_reach_table))))
+print(' '.join(list(getMap(str, lazer_reach_table))))

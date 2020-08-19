@@ -1,7 +1,7 @@
 import math
 
 table = [0 ,0, 0, 0, 0, 0, 0, 0, 0]
-value = list(map(int, str(input())))
+value = list(getMap(int, str(input())))
 
 for i in value:
     if i == 6 or i == 9:

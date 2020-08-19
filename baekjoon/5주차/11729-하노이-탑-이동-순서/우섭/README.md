@@ -19,9 +19,9 @@ def hanoi(a, b, k):
     print("{} {}".format(a, b))
     hanoi(tower-a-b, b, k-1)
 
-n = int(stdin.readline())
-print(2**n-1)
-hanoi(1, 3, n)
+getN = int(stdin.readline())
+print(2**getN-1)
+hanoi(1, 3, getN)
 ```
 
 ## 3. 설명
@@ -36,7 +36,7 @@ hanoi(1, 3, n)
 
 2. 재귀
 
-    - [0x0B강 - 재귀 - BaaaaaaaarkingDog](https://baaaaaaaaaaaaaaaaaaaaaaarkingdog.tistory.com/943?category=773649)의 설명으로 대신하자면 **n-1개의 원판을 원하는 곳으로 옮길 수만 있다면 n개의 원판을 처리할 수 있다**
+    - [0x0B강 - 재귀 - BaaaaaaaarkingDog](https://baaaaaaaaaaaaaaaaaaaaaaarkingdog.tistory.com/943?category=773649)의 설명으로 대신하자면 **getN-1개의 원판을 원하는 곳으로 옮길 수만 있다면 n개의 원판을 처리할 수 있다**
     - 1번 기둥에서 3번 기둥으로 t개의 원판을 옮긴다 라는 것은...
     - 1번 기둥에서 2번 기둥으로 t-1개의 원판을 옮긴 후...
     - 1번 기둥에서 3번 기둥으로 t번째 원판을 옮긴 후...

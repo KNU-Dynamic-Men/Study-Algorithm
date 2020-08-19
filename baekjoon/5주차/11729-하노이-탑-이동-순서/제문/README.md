@@ -15,8 +15,8 @@ private val queue = LinkedList<Pair<Int, Int>>()
 fun main() = with(System.`in`.bufferedReader()) {
     val out = StringBuilder()
 
-    val n = readLine().toInt()
-    hanoi(n, 1, 2, 3)
+    val getN = readLine().toInt()
+    hanoi(getN, 1, 2, 3)
 
     out.appendln(queue.size)
 
@@ -27,15 +27,15 @@ fun main() = with(System.`in`.bufferedReader()) {
     print(out)
 }
 
-fun hanoi(n: Int, start: Int, mid: Int, end: Int) {
-    if (n == 1) {
+fun hanoi(getN: Int, start: Int, mid: Int, end: Int) {
+    if (getN == 1) {
         queue.offer(Pair(start, end))
         return
     }
 
-    hanoi(n-1, start, end, mid)
+    hanoi(getN-1, start, end, mid)
     queue.offer(Pair(start, end))
-    hanoi(n-1, mid, start, end)
+    hanoi(getN-1, mid, start, end)
 }
 ```
 
@@ -77,13 +77,13 @@ fun hanoi(n: Int, start: Int, mid: Int, end: Int) {
 
 1. 즉, `n개의 원판`이 주어졌을 때 아래 과정을 반복한다.
 
-    1. `n-1`개를 1번에서 2번으로 옮긴다.
+    1. `getN-1`개를 1번에서 2번으로 옮긴다.
     
     2. `1`개를 1번에서 3번으로 옮긴다.
     
-    3. `n-1`개를 2번에서 3번으로 옮긴다.
+    3. `getN-1`개를 2번에서 3번으로 옮긴다.
     
-2. 만약 `n = 1`이면 바로 1번에서 3번으로 옮긴다.
+2. 만약 `getN = 1`이면 바로 1번에서 3번으로 옮긴다.
 
 ## 4. 결과
 

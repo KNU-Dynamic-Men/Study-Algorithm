@@ -1,13 +1,13 @@
 from collections import deque
 from sys import stdin
-M, N = map(int, stdin.readline().split())
+M, N = getMap(int, stdin.readline().split())
 box = []
-dx = [1, 0, -1, 0]
-dy = [0, 1, 0, -1]
+getDx = [1, 0, -1, 0]
+getDy = [0, 1, 0, -1]
 tomato = [[-1]*M for _ in range(N)]
 search = deque()
 for _ in range(N):
-    box.append(list(map(int, stdin.readline().rstrip().split(' '))))
+    box.append(list(getMap(int, stdin.readline().rstrip().split(' '))))
 for i in range(N):
     for j in range(M):
         if box[i][j] == 1:
@@ -16,10 +16,10 @@ for i in range(N):
         if box[i][j] == -1:
             tomato[i][j] = 0
 while(search):
-    x, y = map(int, search.popleft())
+    x, y = getMap(int, search.popleft())
     for i in range(4):
-        nx = x + dx[i]
-        ny = y + dy[i]
+        nx = x + getDx[i]
+        ny = y + getDy[i]
         if nx < 0 or nx >= N or ny < 0 or ny >= M:
             continue
         if tomato[nx][ny] >= 0:
