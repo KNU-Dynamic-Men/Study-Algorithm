@@ -1,4 +1,4 @@
-import sys, time
+import sys
 
 def is_possible(idx, x):
     for i in range(1,idx+1):
@@ -18,7 +18,6 @@ def loop(arr, idx, all_queens, queens):
                 cnt += loop(arr, idx+1, all_queens, queens|set([i]))
     return cnt
 
-now = time.time()
 N = int(sys.stdin.readline())
 if N%2 == 0:
     n = int(N/2)
@@ -26,4 +25,3 @@ else:
     n = N
 arr = [-1]*N
 print(loop(arr, 0, set(range(N)), set()))
-# print(time.time()-now)

@@ -6,7 +6,7 @@
 
 ## **2. 코드**
 
-Python3
+Pypy3
 
 ```python
 import sys, time
@@ -47,6 +47,8 @@ print(loop(arr, 0, set(range(N)), set()))
 
 ## **4. 여정**
 
-1. 실패 -> 왜?
+1. 삽질의 연속
+2. pypy3로 겨우 성공
 
 ## **5. 결과**
+![image](https://user-images.githubusercontent.com/41278416/90012929-43b56300-dcdf-11ea-8b7c-06616c79532b.png)
