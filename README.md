@@ -38,6 +38,7 @@
 | 5주차  | [다리 만들기](https://www.acmicpc.net/problem/2146) | [단지번호붙이기](https://www.acmicpc.net/problem/2667) | [하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) | [텀 프로젝트](https://www.acmicpc.net/problem/9466) | |
 | 6주차  | [N과 M (1)](https://www.acmicpc.net/problem/15649) | [N-Queen](https://www.acmicpc.net/problem/9663) | [적록색약](https://www.acmicpc.net/problem/10026) | [Z](https://www.acmicpc.net/problem/1074) | [별 찍기 - 11](https://www.acmicpc.net/problem/2448)|
 | 7주차 | [비숍](https://www.acmicpc.net/problem/1799) | [부분수열의 합](https://www.acmicpc.net/problem/1182) | [별 찍기 - 10](https://www.acmicpc.net/problem/2447) | | |
+| 8주차 | [동전 1](https://www.acmicpc.net/problem/2293) | [스티커](https://www.acmicpc.net/problem/9465) | [인싸들의 가위바위보](https://www.acmicpc.net/problem/16986) | | |
                     
 
 ### :rainbow: Additional Study
