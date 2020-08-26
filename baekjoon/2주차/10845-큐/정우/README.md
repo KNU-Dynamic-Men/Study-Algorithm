@@ -9,9 +9,9 @@
 ```python
 import sys
 
-getN = int(sys.stdin.readline().strip())
+n = int(sys.stdin.readline().strip())
 arr = []
-for _ in range(getN):
+for _ in range(n):
     line = sys.stdin.readline().strip().split(' ')
     if line[0] == 'push':
         arr.append(line[1])

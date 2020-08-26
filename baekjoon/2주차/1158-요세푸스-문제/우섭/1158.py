@@ -1,8 +1,8 @@
 import sys
 
-getN, k = getMap(int, sys.stdin.readline().split())
+n, k = map(int, sys.stdin.readline().split())
 ans = []
-list = [x for x in range(1, getN+1)]
+list = [x for x in range(1, n+1)]
 index = k - 1
 while len(list) > 0:
     if len(list) > index:

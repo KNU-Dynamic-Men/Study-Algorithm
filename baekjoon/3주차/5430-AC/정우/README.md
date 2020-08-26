@@ -12,7 +12,7 @@ import sys
 T = int(sys.stdin.readline().strip())
 for _ in range(T):
     p = sys.stdin.readline().strip()
-    getN = int(sys.stdin.readline().strip())
+    n = int(sys.stdin.readline().strip())
     x = sys.stdin.readline().strip()[1:-1]
     if x:
         x = x.split(',')

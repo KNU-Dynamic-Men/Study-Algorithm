@@ -1,7 +1,7 @@
 from math import log2
-getN = int(input())
-k = int(log2(getN / 3))
-stage = [[' '] * getN * 2 for _ in range(getN)]
+n = int(input())
+k = int(log2(n / 3))
+stage = [[' '] * n * 2 for _ in range(n)]
 
 def change_for_star(y, x):
     stage[y-2][x+2] = '*'
@@ -19,6 +19,6 @@ def tri(y, x, count):
     tri(y, x, count-1)
     tri(y, x + 2 * tmp, count-1)
 
-tri(getN-1, 0, k)
+tri(n-1, 0, k)
 for i in stage:
     print(''.join(i))

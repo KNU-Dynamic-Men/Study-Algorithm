@@ -8,9 +8,9 @@ https://www.acmicpc.net/problem/2448
 
 ```python
 from math import log2
-getN = int(input())
-k = int(log2(getN / 3))
-stage = [[' '] * getN * 2 for _ in range(getN)]
+n = int(input())
+k = int(log2(n / 3))
+stage = [[' '] * n * 2 for _ in range(n)]
 
 def change_for_star(y, x):
     stage[y-2][x+2] = '*'
@@ -28,7 +28,7 @@ def tri(y, x, count):
     tri(y, x, count-1)
     tri(y, x + 2 * tmp, count-1)
 
-tri(getN-1, 0, k)
+tri(n-1, 0, k)
 for i in stage:
     print(''.join(i))
 ```
@@ -52,14 +52,14 @@ for i in stage:
 3. 구현
 
     ```python
-    k = int(log2(getN / 3))
+    k = int(log2(n / 3))
     ```
     - `k`를 구하기 위해 `math` 모듈을 불러온 후 `log2` 함수를 통하여 `k`값을 구한다
 
     ```python
-    tri(getN-1, 0, k)
+    tri(n-1, 0, k)
     ```
-    - 가장 왼쪽 아래의 좌표인 `(getN-1, 0)`을 이용하여 탐색을 시작한다
+    - 가장 왼쪽 아래의 좌표인 `(n-1, 0)`을 이용하여 탐색을 시작한다
     ```python
     tmp = 3 * 2 ** (count-1)
     tri(y - tmp, x + tmp, count-1)

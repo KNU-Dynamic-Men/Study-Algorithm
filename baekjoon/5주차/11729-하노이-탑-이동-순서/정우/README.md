@@ -11,13 +11,13 @@ Python3
 ```python
 import sys
 
-def hanoi(getN, source, to, sub):
-    if getN == 1:
+def hanoi(n, source, to, sub):
+    if n == 1:
         print(source, to)
         return
-    hanoi(getN-1, source, sub, to)
+    hanoi(n-1, source, sub, to)
     print(source, to)
-    hanoi(getN-1, sub, to, source)
+    hanoi(n-1, sub, to, source)
 
 N = int(sys.stdin.readline())
 print(2**N-1)
@@ -30,9 +30,9 @@ hanoi(N, 1, 3, 2)
 2. 재귀 탐색 알고리즘
     1. 원반이 한 개면 그냥 옮길 수 있다.(종료 조건)
     2. 원반이 n개일 때
-        1. 1번 기둥에 있는 n개 원반 중 getN-1개를 2번 기둥으로 옮긴다.(3번 기둥은 보조)
+        1. 1번 기둥에 있는 n개 원반 중 n-1개를 2번 기둥으로 옮긴다.(3번 기둥은 보조)
         2. 1번 기둥에 남아 있는 가장 큰 원반을 3번 기둥으로 옮긴다.(출력)
-        3. 2번 기둥에 남아 있는 getN-1개 원반을 다시 3번 원반으로 옮긴다.(1번 기둥은 보조)
+        3. 2번 기둥에 남아 있는 n-1개 원반을 다시 3번 원반으로 옮긴다.(1번 기둥은 보조)
 
 ## **4. 여정**
 

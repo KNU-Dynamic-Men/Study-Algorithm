@@ -11,19 +11,19 @@ import java.util.*
 import kotlin.math.max
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val (col, row) = readLine().split(" ").getMap { it.toInt() }
+    val (col, row) = readLine().split(" ").map { it.toInt() }
     val arr = Array(row) { IntArray(col) }
     val distance = Array(row) { IntArray(col) }
     val queue = LinkedList<Pair<Int, Int>>()
-    val getDy = arrayOf(-1, 1, 0, 0)
-    val getDx = arrayOf(0, 0, -1, 1)
+    val dy = arrayOf(-1, 1, 0, 0)
+    val dx = arrayOf(0, 0, -1, 1)
     var answer = 0
 
     // 1. 익은 토마토가 있는 좌표 queue 에 모두 등록
     for (i in 0 until row)
         readLine()
             .split(" ")
-            .getMap { it.toInt() }
+            .map { it.toInt() }
             .forEachIndexed { index, value ->
                 arr[i][index] = value
                 if (value == 1) queue.offer(Pair(i, index))
@@ -33,8 +33,8 @@ fun main() = with(System.`in`.bufferedReader()) {
         val curr = queue.poll()
 
         for (j in 0 until 4) {
-            val yPos = curr.first + getDy[j]
-            val xPos = curr.second + getDx[j]
+            val yPos = curr.first + dy[j]
+            val xPos = curr.second + dx[j]
 
             if (yPos < 0 || yPos >= row || xPos < 0 || xPos >= col) continue
             if (arr[yPos][xPos] != 0) continue

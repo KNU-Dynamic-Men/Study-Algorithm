@@ -14,7 +14,7 @@ import java.util.*
 fun main() = with(System.`in`.bufferedReader()) {
     val out = StringBuilder()
     val towerNum = readLine().toInt()
-    val tower = readLine().split(" ").getMap { it.toInt() }.toIntArray()
+    val tower = readLine().split(" ").map { it.toInt() }.toIntArray()
     val answer = IntArray(towerNum)
     val stack = Stack<Pair<Int, Int>>() // Stack의 Top은 좌측의 타워 중 첫 번째로 큰 타워
 
@@ -53,7 +53,7 @@ import java.util.*
 
 fun main() = with(System.`in`.bufferedReader()) {
     val towerNum = readLine().toInt()
-    val tower = readLine().split(" ").getMap { it.toInt() }.toIntArray()
+    val tower = readLine().split(" ").map { it.toInt() }.toIntArray()
     val answer = IntArray(towerNum)
     val towersOnTheLeft = Stack<Pair<Int, Int>>() // Stack의 Top은 좌측의 타워 중 보이는 첫 번째 타워
 
@@ -83,12 +83,12 @@ fun main() = with(System.`in`.bufferedReader()) {
 
 ## 3. 풀이 과정
 
-- 무식하게 풀면 **이중 for문**으로 풀 수 있지만 탑 배열의 길이가 **500,000** 까지 들어오기 때문에 **getN-제곱** 수행 시간으로는 **시간 초과**가 날 게 뻔했다.
+- 무식하게 풀면 **이중 for문**으로 풀 수 있지만 탑 배열의 길이가 **500,000** 까지 들어오기 때문에 **n-제곱** 수행 시간으로는 **시간 초과**가 날 게 뻔했다.
 </br>
 
 - 스택을 이용해서 풀 수 있을까 생각을 했다. 가장 최근의 큰 타워를 찾으려고 스택의 원소를 `pop()` 해버리면 정보가 훼손되어 그 다음 연산에 지장이 갈 꺼라고 생각했다.
 
-- 그렇다고 다시 정보를 복구해버리면 **getN-제곱**이 될 게 뻔했다.
+- 그렇다고 다시 정보를 복구해버리면 **n-제곱**이 될 게 뻔했다.
 </br>
 
 - 문제의 `Key` 가 되는 규칙은 [https://mygumi.tistory.com/101](https://mygumi.tistory.com/101) 을 참고했다.

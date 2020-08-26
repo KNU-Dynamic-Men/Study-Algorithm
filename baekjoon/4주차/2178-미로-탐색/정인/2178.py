@@ -1,10 +1,10 @@
 import sys, collections
 
-(rows, cols) = getMap(int, sys.stdin.readline().rstrip().split(" "))
+(rows, cols) = map(int, sys.stdin.readline().rstrip().split(" "))
 
 maze_body = []
 for _ in range(rows):
-    converted_list = getMap(int, list(sys.stdin.readline().rstrip()))
+    converted_list = map(int, list(sys.stdin.readline().rstrip()))
     maze_body.append(list(converted_list))
 index_body = [[0] * cols for _ in range(rows)]
 

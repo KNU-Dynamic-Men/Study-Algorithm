@@ -11,9 +11,9 @@ https://www.acmicpc.net/problem/1158
 ```python
 import sys
 
-getN, k = getMap(int, sys.stdin.readline().split())
+n, k = map(int, sys.stdin.readline().split())
 ans = []
-list = [x for x in range(1, getN+1)]
+list = [x for x in range(1, n+1)]
 index = k - 1
 while len(list) > 0:
     if len(list) > index:
@@ -39,14 +39,14 @@ print(result)
 
 2. 입력 및 변수지정
 
-    - ```sys.stdin.readline().split()```을 이용하여 ```getN, k```값을 입력받는다.
+    - ```sys.stdin.readline().split()```을 이용하여 ```n, k```값을 입력받는다.
     - ```list```는 정렬되기 전 모든 수가 저장된 리스트
     - ```ans```는 완성된 요세푸스 수열이 저장될 리스트
     - ```index```는 리스트에서 탐색할 위치
     ```python
-    getN, k = getMap(int, sys.stdin.readline().split())
+    n, k = map(int, sys.stdin.readline().split())
     ans = []
-    list = [x for x in range(1, getN+1)]
+    list = [x for x in range(1, n+1)]
     index = k - 1
     ``` 
 

@@ -1,8 +1,8 @@
 import sys
 
-getN = int(sys.stdin.readline())
+n = int(sys.stdin.readline())
 stack = []
-for _ in range(getN):
+for _ in range(n):
     input = sys.stdin.readline()
     if 'push' in input:
         stack.append(int(input.split()[1]))

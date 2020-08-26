@@ -1,28 +1,28 @@
 from sys import stdin
 from collections import deque
-getDx = [1, -1, 0, 0]
-getDy = [0, 0, 1, -1]
-getN = int(stdin.readline())
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
+n = int(stdin.readline())
 land = []
-for _ in range(getN):
-    land.append(list(getMap(int, stdin.readline().split(' '))))
-check = [[False]*getN for _ in range(getN)]
+for _ in range(n):
+    land.append(list(map(int, stdin.readline().split(' '))))
+check = [[False]*n for _ in range(n)]
 route = deque()
 
 k = 0
-for i in range(getN):
-    for j in range(getN):
+for i in range(n):
+    for j in range(n):
         if land[i][j] == 1 and not check[i][j]:
             k += 1
             land[i][j] = k
             route.append([i, j])
             check[i][j] = True
             while(route):
-                a, b = getMap(int, route.pop())
+                a, b = map(int, route.pop())
                 for t in range(4):
-                    nx = a + getDx[t]
-                    ny = b + getDy[t]
-                    if nx < 0 or nx >= getN or ny < 0 or ny >= getN: continue
+                    nx = a + dx[t]
+                    ny = b + dy[t]
+                    if nx < 0 or nx >= n or ny < 0 or ny >= n: continue
                     if not check[nx][ny] and land[nx][ny] == 1:
                         land[nx][ny] = k
                         check[nx][ny] = True
@@ -30,21 +30,21 @@ for i in range(getN):
 
 ans = 500
 for l in range(1, k+1):
-    bridge = [[-1]*getN for _ in range(getN)]
+    bridge = [[-1]*n for _ in range(n)]
     route = deque()
-    for i in range(getN):
-        for j in range(getN):
+    for i in range(n):
+        for j in range(n):
             if land[i][j] == l:
                 route.append([i, j])
                 bridge[i][j] = 0
                 
     find = False
     while(route and not find):
-        a, b = getMap(int, route.popleft())
+        a, b = map(int, route.popleft())
         for t in range(4):
-            nx = a + getDx[t]
-            ny = b + getDy[t]
-            if nx < 0 or nx >= getN or ny < 0 or ny >= getN: continue
+            nx = a + dx[t]
+            ny = b + dy[t]
+            if nx < 0 or nx >= n or ny < 0 or ny >= n: continue
             if land[nx][ny] > 0 and land[nx][ny] != l:
                 ans = min(ans, bridge[a][b])
                 find = True

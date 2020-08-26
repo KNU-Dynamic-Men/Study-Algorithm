@@ -11,59 +11,59 @@ import java.util.*
 import kotlin.math.min
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val getN = readLine().toInt()  // 지도의 크기
-    val getMap = Array(getN) { IntArray(getN) }
-    val getDy = arrayOf(-1, 1, 0, 0)
-    val getDx = arrayOf(0, 0, -1, 1)
+    val n = readLine().toInt()  // 지도의 크기
+    val map = Array(n) { IntArray(n) }
+    val dy = arrayOf(-1, 1, 0, 0)
+    val dx = arrayOf(0, 0, -1, 1)
 
-    // getMap 정보 저장
-    for (i in 0 until getN) {
-        getMap[i] = readLine().split(" ").getMap { it.toInt() }.toIntArray()
+    // map 정보 저장
+    for (i in 0 until n) {
+        map[i] = readLine().split(" ").map { it.toInt() }.toIntArray()
     }
 
     // DFS 하여 군집화
-    val getVisited = Array(getN) { BooleanArray(getN) }
-    val dist = Array(getN) { IntArray(getN) }
+    val visited = Array(n) { BooleanArray(n) }
+    val dist = Array(n) { IntArray(n) }
     val stack = Stack<Pair<Int, Int>>()
     val queue = LinkedList<Pair<Int, Int>>()
-    var getCnt = 0
+    var cnt = 0
     var ans = Int.MAX_VALUE
 
-    for (y in 0 until getN) {
-        for (x in 0 until getN) {
-            if (getMap[y][x] == 1 && !getVisited[y][x]) {
+    for (y in 0 until n) {
+        for (x in 0 until n) {
+            if (map[y][x] == 1 && !visited[y][x]) {
                 stack.push(Pair(y, x))   // DFS 시작점 초기화
-                getCnt++
+                cnt++
 
                 while (stack.isNotEmpty()) {
                     val curr = stack.pop()
 
-                    getVisited[curr.first][curr.second] = true
-                    getMap[curr.first][curr.second] = getCnt  // 군집화
+                    visited[curr.first][curr.second] = true
+                    map[curr.first][curr.second] = cnt  // 군집화
 
                     for (i in 0..3) {
-                        val yPos = curr.first + getDy[i]
-                        val xPos = curr.second + getDx[i]
+                        val yPos = curr.first + dy[i]
+                        val xPos = curr.second + dx[i]
 
-                        if (yPos < 0 || yPos >= getN || xPos < 0 || xPos >= getN) continue
-                        if (getMap[yPos][xPos] == 1 && !getVisited[yPos][xPos]) stack.push(Pair(yPos, xPos))
+                        if (yPos < 0 || yPos >= n || xPos < 0 || xPos >= n) continue
+                        if (map[yPos][xPos] == 1 && !visited[yPos][xPos]) stack.push(Pair(yPos, xPos))
                     }
                 }
             }
         }
     }
 
-    for (y in 0 until getN) {
-        for (x in 0 until getN) {
-            if (getMap[y][x] != 0) {
+    for (y in 0 until n) {
+        for (x in 0 until n) {
+            if (map[y][x] != 0) {
                 var isBorder = false
 
                 for (i in 0..3) {
-                    val yPos = y + getDy[i]
-                    val xPos = x + getDx[i]
+                    val yPos = y + dy[i]
+                    val xPos = x + dx[i]
 
-                    if (yPos < 0 || yPos >= getN || xPos < 0 || xPos >= getN) continue
-                    if (getMap[yPos][xPos] == 0) {
+                    if (yPos < 0 || yPos >= n || xPos < 0 || xPos >= n) continue
+                    if (map[yPos][xPos] == 0) {
                         isBorder = true
                         break
                     }
@@ -80,16 +80,16 @@ fun main() = with(System.`in`.bufferedReader()) {
                         val curr = queue.pop()
 
                         for (i in 0..3) {
-                            val yPos = curr.first + getDy[i]
-                            val xPos = curr.second + getDx[i]
+                            val yPos = curr.first + dy[i]
+                            val xPos = curr.second + dx[i]
 
-                            if (yPos < 0 || yPos >= getN || xPos < 0 || xPos >= getN) continue
-                            if (getMap[yPos][xPos] == 0 && dist[yPos][xPos] == 0) {
+                            if (yPos < 0 || yPos >= n || xPos < 0 || xPos >= n) continue
+                            if (map[yPos][xPos] == 0 && dist[yPos][xPos] == 0) {
                                 dist[yPos][xPos] = dist[curr.first][curr.second] + 1
                                 queue.offer(Pair(yPos, xPos))
                             }
 
-                            if (getMap[yPos][xPos] != 0 && getMap[yPos][xPos] != getMap[y][x]) {
+                            if (map[yPos][xPos] != 0 && map[yPos][xPos] != map[y][x]) {
                                 ans = min(ans, dist[curr.first][curr.second])
                                 break
                             }

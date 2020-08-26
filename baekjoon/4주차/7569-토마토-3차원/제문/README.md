@@ -11,22 +11,22 @@ import java.util.*
 import kotlin.math.max
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val (col, row, height) = readLine().split(" ").getMap { it.toInt() }
+    val (col, row, height) = readLine().split(" ").map { it.toInt() }
     val arr = Array(height) { Array(row) { IntArray(col) } }    // 3차원 배열
     val distance = Array(height) { Array(row) { IntArray(col) } }
     val queue = LinkedList<Triple<Int, Int, Int>>()
     val dh = arrayOf(0, 0, 0, 0, -1, 1)
-    val getDy = arrayOf(-1, 1, 0, 0, 0, 0) // 상, 하, 좌, 우, 앞, 뒤
-    val getDx = arrayOf(0, 0, -1, 1, 0, 0) // 상, 하, 좌, 우, 앞, 뒤
+    val dy = arrayOf(-1, 1, 0, 0, 0, 0) // 상, 하, 좌, 우, 앞, 뒤
+    val dx = arrayOf(0, 0, -1, 1, 0, 0) // 상, 하, 좌, 우, 앞, 뒤
     var answer = 0
 
     // 익은 토마토를 모두 시작점으로 등록
     for (h in 0 until height) {
-        for (getR in 0 until row) {
-            readLine().split(" ").getMap { it.toInt() }
+        for (r in 0 until row) {
+            readLine().split(" ").map { it.toInt() }
                 .forEachIndexed { index, value ->
-                    arr[h][getR][index] = value
-                    if (value == 1) queue.offer(Triple(h, getR, index))
+                    arr[h][r][index] = value
+                    if (value == 1) queue.offer(Triple(h, r, index))
                 }
         }
     }
@@ -36,8 +36,8 @@ fun main() = with(System.`in`.bufferedReader()) {
 
         for (i in 0 until 6) {
             val hPos = curr.first + dh[i]
-            val yPos = curr.second + getDy[i]
-            val xPos = curr.third + getDx[i]
+            val yPos = curr.second + dy[i]
+            val xPos = curr.third + dx[i]
 
             if (hPos < 0 || hPos >= height || yPos < 0 || yPos >= row || xPos < 0 || xPos >= col) continue
             if (arr[hPos][yPos][xPos] != 0) continue
@@ -70,7 +70,7 @@ fun hasUnripedTomato3d(arr: Array<Array<IntArray>>): Boolean {
 
 - 3차원 개념으로 윗 상자와 아랫 상자의 토마토도 전파시켜야 하므로 6가지 방향으로 전파
 
-- **6가지 방향**에 맞는 좌표값 설정을 위해 `dh, getDy, getDx 배열` 사용
+- **6가지 방향**에 맞는 좌표값 설정을 위해 `dh, dy, dx 배열` 사용
 
 ### 4. 결과
 

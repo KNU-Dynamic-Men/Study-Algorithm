@@ -1,7 +1,7 @@
 import sys
 
 sys.stdin.readline()
-arr = list(getMap(int, sys.stdin.readline().split()))
+arr = list(map(int, sys.stdin.readline().split()))
 ret = [0 for _ in range(len(arr))]
 stack = [(len(arr)-1, arr[-1]),] # [(idx, value)]
 for i in range(len(arr)-2, -1, -1):
@@ -14,5 +14,5 @@ for i in range(len(arr)-2, -1, -1):
         else:
             break
     stack.append((i, arr[i]))
-ret = list(getMap(str, ret))
+ret = list(map(str, ret))
 print(' '.join(ret))
