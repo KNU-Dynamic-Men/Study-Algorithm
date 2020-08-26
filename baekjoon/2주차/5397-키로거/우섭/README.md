@@ -20,7 +20,7 @@ for i in range(count):
             left.pop()
         elif input not in {'<', '>', '-'}:
             left.append(input)
-    print("{0}{1}".format("".join(getMap(str, left)), "".join(getMap(str, right[::-1]))))
+    print("{0}{1}".format("".join(map(str, left)), "".join(map(str, right[::-1]))))
 ```
 
 ## 3. 설명

@@ -10,7 +10,7 @@
 import sys
 
 sys.stdin.readline()
-arr = list(getMap(int, sys.stdin.readline().split()))
+arr = list(map(int, sys.stdin.readline().split()))
 ret = [0 for _ in range(len(arr))]
 stack = [(len(arr)-1, arr[-1]),] # [(idx, value)]
 for i in range(len(arr)-2, -1, -1):
@@ -23,14 +23,14 @@ for i in range(len(arr)-2, -1, -1):
         else:
             break
     stack.append((i, arr[i]))
-ret = list(getMap(str, ret))
+ret = list(map(str, ret))
 print(' '.join(ret))
 ```
 
 ## **3. 설명**
 
 1. n번째의 탑의 인덱스와 높이를 `(인덱스, 높이)` 형식으로 스택에 저장한다.
-2. getN-1번째의 탑과 스택에 저장된 탑을 비교해, getN-1번째의 탑이 더 크다면 정답 배열의 n번째 탑의 위치에 getN-1번째 탑의 인덱스+1 하여 저장한다.
+2. n-1번째의 탑과 스택에 저장된 탑을 비교해, n-1번째의 탑이 더 크다면 정답 배열의 n번째 탑의 위치에 n-1번째 탑의 인덱스+1 하여 저장한다.
 
 ## **4. 여정**
 

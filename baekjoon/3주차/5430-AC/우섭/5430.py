@@ -16,11 +16,11 @@ def printer(card, is_reverse):
         tmp = '[]'
     print(tmp)
 
-getN = int(sys.stdin.readline())
-for _ in range(getN):
-    command = list(sys.stdin.readline().strip('\getN'))
+n = int(sys.stdin.readline())
+for _ in range(n):
+    command = list(sys.stdin.readline().strip('\n'))
     length = int(sys.stdin.readline())
-    card = sys.stdin.readline().lstrip('[').rstrip('\getN').rstrip(']').split(',')
+    card = sys.stdin.readline().lstrip('[').rstrip('\n').rstrip(']').split(',')
     if card[0] == '':
         card.pop()
     is_reverse = False

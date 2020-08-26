@@ -1,15 +1,15 @@
 from collections import deque
 from sys import stdin
-M, N, H = getMap(int, stdin.readline().split())
+M, N, H = map(int, stdin.readline().split())
 box = []
-getDx = [1, 0, -1, 0, 0, 0]
-getDy = [0, 1, 0, -1, 0, 0]
+dx = [1, 0, -1, 0, 0, 0]
+dy = [0, 1, 0, -1, 0, 0]
 dz = [0, 0, 0, 0, 1, -1]
 
 tomato = [[[-1]*M for _ in range(N)] for _ in range(H)]
 search = deque()
 
-box = [[list(getMap(int, stdin.readline().rstrip().split())) for i in range(N)] for j in range(H)]
+box = [[list(map(int, stdin.readline().rstrip().split())) for i in range(N)] for j in range(H)]
 
 for k in range(H):
     for i in range(N):
@@ -20,11 +20,11 @@ for k in range(H):
             if box[k][i][j] == -1:
                 tomato[k][i][j] = 0
 while(search):
-    z, x, y = getMap(int, search.popleft())
+    z, x, y = map(int, search.popleft())
     for i in range(6):
         nz = z + dz[i]
-        nx = x + getDx[i]
-        ny = y + getDy[i]
+        nx = x + dx[i]
+        ny = y + dy[i]
         if nx < 0 or nx >= N or ny < 0 or ny >= M or nz < 0 or nz >= H:
             continue
         if tomato[nz][nx][ny] >= 0:

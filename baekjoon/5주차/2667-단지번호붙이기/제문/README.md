@@ -10,53 +10,53 @@
 import java.util.*
 
 fun main() = with(System.`in`.bufferedReader()) {
-    val getN = readLine().toInt()
-    val arr = Array(getN) { IntArray(getN) }
-    val getVisited = Array(getN) { BooleanArray(getN) }
+    val n = readLine().toInt()
+    val arr = Array(n) { IntArray(n) }
+    val visited = Array(n) { BooleanArray(n) }
     val stack = Stack<Pair<Int, Int>>()
-    val getDy = arrayOf(-1, 1, 0, 0)
-    val getDx = arrayOf(0, 0, -1, 1)
+    val dy = arrayOf(-1, 1, 0, 0)
+    val dx = arrayOf(0, 0, -1, 1)
     var ans = 0 // 개수
     val homes = mutableListOf<Int>()
 
-    for (i in 0 until getN) {
-        arr[i] = readLine().toCharArray().getMap { it.toInt() - 48 }.toIntArray()
+    for (i in 0 until n) {
+        arr[i] = readLine().toCharArray().map { it.toInt() - 48 }.toIntArray()
     }
 
     // DFS 진행
-    for (y in 0 until getN) {
-        for (x in 0 until getN) {
+    for (y in 0 until n) {
+        for (x in 0 until n) {
 
-            if (arr[y][x] == 1 && !getVisited[y][x]) {
+            if (arr[y][x] == 1 && !visited[y][x]) {
                 stack.push(Pair(y, x))
                 ans++
-                var getCnt = 0
+                var cnt = 0
 
                 while (stack.isNotEmpty()) {
                     val curr = stack.pop()
-                    if (getVisited[curr.first][curr.second]) continue
+                    if (visited[curr.first][curr.second]) continue
 
-                    getVisited[curr.first][curr.second] = true
-                    getCnt++
+                    visited[curr.first][curr.second] = true
+                    cnt++
 
                     for (i in 0 until 4) {
-                        val yPos = curr.first + getDy[i]
-                        val xPos = curr.second + getDx[i]
+                        val yPos = curr.first + dy[i]
+                        val xPos = curr.second + dx[i]
 
-                        if (yPos < 0 || yPos >= getN || xPos < 0 || xPos >= getN) continue
-                        if (arr[yPos][xPos] == 0 || getVisited[yPos][xPos]) continue
+                        if (yPos < 0 || yPos >= n || xPos < 0 || xPos >= n) continue
+                        if (arr[yPos][xPos] == 0 || visited[yPos][xPos]) continue
 
                         stack.push(Pair(yPos, xPos))
                     }
                 }
-                homes.add(getCnt)
+                homes.add(cnt)
             }
         }
     }
     homes.sort()
 
     println(ans)
-    println(homes.joinToString("\getN"))
+    println(homes.joinToString("\n"))
 }
 ```
 
@@ -68,13 +68,13 @@ fun main() = with(System.`in`.bufferedReader()) {
 
 ### 3-1 해결 과정
 
-1. `getVisited[]` 을 통해 방문한지 안한지 확인하면서 탐색할 위치를 추가
+1. `visited[]` 을 통해 방문한지 안한지 확인하면서 탐색할 위치를 추가
 
 2. `stack` 이 빌 때까지 아래 작업을 반복
 
     1. 만약 이미 방문한 점이라면 `continue`
     
-    2. 아니라면 `getCnt 1 증가` 후, 다음 가능한 지점 `stack에 push`
+    2. 아니라면 `cnt 1 증가` 후, 다음 가능한 지점 `stack에 push`
 
 ## 4. 결과
 

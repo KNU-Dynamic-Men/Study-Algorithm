@@ -1,17 +1,17 @@
 import sys
 
-getN = int(sys.stdin.readline())
-for i in range(getN):
+n = int(sys.stdin.readline())
+for i in range(n):
     line = list(sys.stdin.readline().strip())
     left = list()
     right = list()
-    for getC in line:
-        if getC == '<' and left:
+    for c in line:
+        if c == '<' and left:
             right.append(left.pop())
-        elif getC == '>' and right:
+        elif c == '>' and right:
             left.append(right.pop())
-        elif getC == '-' and left:
+        elif c == '-' and left:
             left.pop()
-        elif getC not in {'<','>','-'}:
-            left.append(getC)
+        elif c not in {'<','>','-'}:
+            left.append(c)
     print(f"{''.join(left)}{''.join(right[::-1])}")

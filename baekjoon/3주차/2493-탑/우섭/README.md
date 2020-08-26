@@ -10,8 +10,8 @@ https://www.acmicpc.net/problem/2493
 ```python
 from sys import stdin
 
-getN = int(stdin.readline())
-tower = list(getMap(int, stdin.readline().split(' ')))
+n = int(stdin.readline())
+tower = list(map(int, stdin.readline().split(' ')))
 ans = []
 while(tower):
     t = tower.pop()
@@ -34,11 +34,11 @@ for i in ans:
 ```python
 from sys import stdin
 
-getN = int(stdin.readline())
-tower = list(getMap(int, stdin.readline().split(' ')))
+n = int(stdin.readline())
+tower = list(map(int, stdin.readline().split(' ')))
 ans = []
 stack = []
-for i in range(getN):
+for i in range(n):
     while stack:
         if stack[-1][1] > tower[i]:
             ans.append(stack[-1][0] + 1)
@@ -64,8 +64,8 @@ for i in ans:
 
     - ![image](https://user-images.githubusercontent.com/29600820/87773997-eb657f80-c85e-11ea-9b7f-10eecaac2980.png)
     - ~~눈앞을 캄캄하게 만들어버린~~ **시간 초과**
-    - 풀이 자체는 맞았지만, ```while```문과 ```for```문을 이중으로 쓰는 이상 Worst 시간 복잡도는 ```O(getN^2)```가 나온다 [참고 링크: 테스트 케이스 추가 요청](https://www.acmicpc.net/board/view/48073)
-    - 이 문제의 테스트케이스는 ```N은 1 이상 500,000 이하```이다. ```O(getN^2)```의 시간 복잡도로는 1.5초 안에 **절대 안풀린다**
+    - 풀이 자체는 맞았지만, ```while```문과 ```for```문을 이중으로 쓰는 이상 Worst 시간 복잡도는 ```O(n^2)```가 나온다 [참고 링크: 테스트 케이스 추가 요청](https://www.acmicpc.net/board/view/48073)
+    - 이 문제의 테스트케이스는 ```N은 1 이상 500,000 이하```이다. ```O(n^2)```의 시간 복잡도로는 1.5초 안에 **절대 안풀린다**
     - ```Stack```을 사용하라는 힌트를 받고 새로 구상하였다
 
 3. ```Stack```을 활용한 풀이

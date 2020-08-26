@@ -1,7 +1,7 @@
 from sys import stdin
 
-getN = int(stdin.readline())
-tower = list(getMap(int, stdin.readline().split(' ')))
+n = int(stdin.readline())
+tower = list(map(int, stdin.readline().split(' ')))
 ans = []
 while(tower):
     t = tower.pop()

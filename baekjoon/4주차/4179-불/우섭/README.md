@@ -10,14 +10,14 @@ https://www.acmicpc.net/problem/4179
 from collections import deque
 from sys import stdin
 
-R, C = getMap(int, stdin.readline().split())
+R, C = map(int, stdin.readline().split())
 stage = []
 fi = [[0]*C for _ in range(R)]
 pi = [[0]*C for _ in range(R)]
 fi_q = deque()
 pi_q = deque()
-getDx = [1, 0, -1, 0]
-getDy = [0, 1, 0, -1]
+dx = [1, 0, -1, 0]
+dy = [0, 1, 0, -1]
 
 def read_stage():
     for _ in range(R):
@@ -36,8 +36,8 @@ def fire_dfs():
     while(fi_q):
         cur = fi_q.popleft()
         for i in range(4):
-            nx = cur[0] + getDx[i]
-            ny = cur[1] + getDy[i]
+            nx = cur[0] + dx[i]
+            ny = cur[1] + dy[i]
             if nx < 0 or nx >= R or ny < 0 or ny >= C:
                 continue
             if fi[nx][ny] > 0 or stage[nx][ny] == '#':
@@ -49,8 +49,8 @@ def people_dfs():
     while(pi_q):
         cur = pi_q.popleft()
         for i in range(4):
-            nx = cur[0] + getDx[i]
-            ny = cur[1] + getDy[i]
+            nx = cur[0] + dx[i]
+            ny = cur[1] + dy[i]
             if nx < 0 or nx >= R or ny < 0 or ny >= C:
                 return pi[cur[0]][cur[1]]
             if pi[nx][ny] > 0 or stage[nx][ny] == '#':
@@ -81,14 +81,14 @@ print('IMPOSSIBLE' if ans == -1 else ans)
 2. 변수 지정
 
     ```python
-    R, C = getMap(int, stdin.readline().split())
+    R, C = map(int, stdin.readline().split())
     stage = []
     fi = [[0]*C for _ in range(R)]
     pi = [[0]*C for _ in range(R)]
     fi_q = deque()
     pi_q = deque()
-    getDx = [1, 0, -1, 0]
-    getDy = [0, 1, 0, -1]
+    dx = [1, 0, -1, 0]
+    dy = [0, 1, 0, -1]
     ```
     - `R, C` : 입력으로 주어진 행, 열의 개수
     - `stage` : 미로가 저장되는 배열
@@ -96,8 +96,8 @@ print('IMPOSSIBLE' if ans == -1 else ans)
     - `pi` : 지훈이가 해당 좌표로 이동할 수 있는 시간을 저장한 배열
     - `fi_q` : 불이 번진 좌표를 저장한 `Queue`
     - `pi_q` : 지훈이가 이동 가능한 좌표를 저장한 `Queue`
-    - `getDx` : `x`축 이동 시 좌표 계산을 위한 배열
-    - `getDy` : `y`축 이동 시 좌표 계산을 위한 배열
+    - `dx` : `x`축 이동 시 좌표 계산을 위한 배열
+    - `dy` : `y`축 이동 시 좌표 계산을 위한 배열
 
 3. 입력 함수 구현
 
@@ -150,8 +150,8 @@ print('IMPOSSIBLE' if ans == -1 else ans)
         while(fi_q):
             cur = fi_q.popleft()
             for i in range(4):
-                nx = cur[0] + getDx[i]
-                ny = cur[1] + getDy[i]
+                nx = cur[0] + dx[i]
+                ny = cur[1] + dy[i]
                 if nx < 0 or nx >= R or ny < 0 or ny >= C:
                     continue
                 if fi[nx][ny] > 0 or stage[nx][ny] == '#':
@@ -167,11 +167,11 @@ print('IMPOSSIBLE' if ans == -1 else ans)
         cur = fi_q.popleft()
     ```
 
-    - 이미 저장되어 있는 `getDx`, `getDy` 리스트를 이용하여 4방향의 좌표를 계산 후 탐색을 진행한다
+    - 이미 저장되어 있는 `dx`, `dy` 리스트를 이용하여 4방향의 좌표를 계산 후 탐색을 진행한다
     ```python
     for i in range(4):
-        nx = cur[0] + getDx[i]
-        ny = cur[1] + getDy[i]
+        nx = cur[0] + dx[i]
+        ny = cur[1] + dy[i]
     ```
 
     - *조건 1*. 해당 좌표값이 지도의 크기를 벗어난 경우 불이 번질 수 없으므로 다음 좌표를 탐색한다
@@ -198,8 +198,8 @@ print('IMPOSSIBLE' if ans == -1 else ans)
         while(pi_q):
             cur = pi_q.popleft()
             for i in range(4):
-                nx = cur[0] + getDx[i]
-                ny = cur[1] + getDy[i]
+                nx = cur[0] + dx[i]
+                ny = cur[1] + dy[i]
                 if nx < 0 or nx >= R or ny < 0 or ny >= C:
                     return pi[cur[0]][cur[1]]
                 if pi[nx][ny] > 0 or stage[nx][ny] == '#':
@@ -215,11 +215,11 @@ print('IMPOSSIBLE' if ans == -1 else ans)
     while(pi_q):
         cur = pi_q.popleft()
     ```
-    - 불이 번지는 시간과 동일하게 이미 저장되어 있는 `getDx`, `getDy` 리스트를 이용하여 4방향의 좌표를 계산 후 탐색을 진행한다
+    - 불이 번지는 시간과 동일하게 이미 저장되어 있는 `dx`, `dy` 리스트를 이용하여 4방향의 좌표를 계산 후 탐색을 진행한다
     ```python
     for i in range(4):
-        nx = cur[0] + getDx[i]
-        ny = cur[1] + getDy[i]
+        nx = cur[0] + dx[i]
+        ny = cur[1] + dy[i]
     ```
     - 지훈이의 좌표가 지도의 크기를 벗어난 경우 탈출에 성공한 것이므로 해당 이동 시간을 반환하고 함수를 종료한다
     ```python

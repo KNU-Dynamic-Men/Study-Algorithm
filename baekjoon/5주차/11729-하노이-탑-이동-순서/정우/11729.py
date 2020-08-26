@@ -1,12 +1,12 @@
 import sys
 
-def hanoi(getN, source, to, sub):
-    if getN == 1:
+def hanoi(n, source, to, sub):
+    if n == 1:
         print(source, to)
         return
-    hanoi(getN-1, source, sub, to)
+    hanoi(n-1, source, sub, to)
     print(source, to)
-    hanoi(getN-1, sub, to, source)
+    hanoi(n-1, sub, to, source)
 
 N = int(sys.stdin.readline())
 print(2**N-1)

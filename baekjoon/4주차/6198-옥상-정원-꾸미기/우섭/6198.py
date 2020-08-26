@@ -1,12 +1,12 @@
 from sys import stdin
 
-getN = int(stdin.readline())
+n = int(stdin.readline())
 a = 0
 tower = []
 stack = []
-for _ in range(getN):
+for _ in range(n):
     tower.append(int(stdin.readline()))
-for i in range(getN):
+for i in range(n):
     while(stack):
         if stack[-1] <= tower[i]:
             stack.pop()

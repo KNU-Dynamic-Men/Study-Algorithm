@@ -1,7 +1,7 @@
 import sys
 
-getN, k = getMap(int, sys.stdin.readline().split(' '))
-arr = list(range(1, getN+1))
+n, k = map(int, sys.stdin.readline().split(' '))
+arr = list(range(1, n+1))
 res = list()
 idx = k-1
 while len(arr) > 0:
