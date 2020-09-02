@@ -1,8 +1,8 @@
-# **2293 - 동전 1**
+# **2294 - 동전 2**
 
 ## **1. 개요**
 
-[https://www.acmicpc.net/problem/2293](https://www.acmicpc.net/problem/2293)
+[https://www.acmicpc.net/problem/2294](https://www.acmicpc.net/problem/2294)
 
 ## **2. 코드**
 
@@ -13,14 +13,23 @@ import sys
 
 n, k = map(int, sys.stdin.readline().split())
 arr = []
+dp = [10001] * (k+1)
 for _ in range(n):
-    arr.append(int(sys.stdin.readline()))
-dp = [0]*(k+1)
-dp[0] = 1
-for i in arr:
-    for j in range(i, k+1):
-        dp[j] += dp[j - i]
-print(dp[k])
+    i = int(sys.stdin.readline())
+    if i <= k:
+        dp[i] = 1
+    arr.append(i)
+arr = list(set(arr))
+res = []
+
+for i in range(1, k+1):
+    for a in arr:
+        if i-a >= 0:
+            dp[i] = min(dp[i-a]+1, dp[i])
+if dp[-1] == 10001:
+    print(-1)
+else:
+    print(dp[-1])
 ```
 
 ## **3. 설명**
