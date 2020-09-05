@@ -4,9 +4,8 @@
 
 > 스터디는 다음 알고리즘 사이트들을 통해 진행됩니다.
 
-| [<img src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" width="300">](https://www.acmicpc.net/) | [<img src="https://programmers.co.kr/assets/bi-programmers-light-0d164d49b51a123bab5cca11106145d6fac5a5ac04b8646780369c2a5bc0dd79.png" width="300">](https://programmers.co.kr/) |
+| [<img src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" width="300">](https://www.acmicpc.net/) | [<div class="text-white bg-gray-dark mb-2"><img src="https://programmers.co.kr/assets/bi-programmers-light-0d164d49b51a123bab5cca11106145d6fac5a5ac04b8646780369c2a5bc0dd79.png" width="300"></div>](https://programmers.co.kr/) |
 | :-- | :-- |
-
 
 ## :fire:알고리즘 스터디:fire: 진행방식
 
