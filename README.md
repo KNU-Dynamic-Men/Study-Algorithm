@@ -4,8 +4,8 @@
 
 > 스터디는 다음 알고리즘 사이트들을 통해 진행됩니다.
 
-| [<img src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" width="300">](https://www.acmicpc.net/) |
-| :-- |
+| [<img src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png" width="300">](https://www.acmicpc.net/) | [<img src="https://programmers.co.kr/assets/bi-programmers-light-0d164d49b51a123bab5cca11106145d6fac5a5ac04b8646780369c2a5bc0dd79.png" width="300">](https://programmers.co.kr/) |
+| :-- | :-- |
 
 
 ## :fire:알고리즘 스터디:fire: 진행방식
@@ -40,6 +40,7 @@
 | 7주차 | [비숍](https://www.acmicpc.net/problem/1799) | [부분수열의 합](https://www.acmicpc.net/problem/1182) | [별 찍기 - 10](https://www.acmicpc.net/problem/2447) | | |
 | 8주차 | [동전 1](https://www.acmicpc.net/problem/2293) | [스티커](https://www.acmicpc.net/problem/9465) | [인싸들의 가위바위보](https://www.acmicpc.net/problem/16986) | | |
 | 9주차 | [동전 2](https://www.acmicpc.net/problem/2294) | [트리의 높이와 너비](https://www.acmicpc.net/problem/2250) | [최소 힙](https://www.acmicpc.net/problem/1927) | | |
+| 10주차 | [문자열 압축](https://programmers.co.kr/learn/courses/30/lessons/60057) | [괄호 변환](https://programmers.co.kr/learn/courses/30/lessons/60058) | [자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059) | [가사 검색](https://programmers.co.kr/learn/courses/30/lessons/60060) | |  |
 
 
 ### :rainbow: Additional Study
