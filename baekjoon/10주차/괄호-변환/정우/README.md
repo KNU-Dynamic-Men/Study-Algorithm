@@ -1,80 +1,55 @@
-# **1927 - 최소 힙**
+# **2020 카카오 블라인드 1차 2번 - 괄호 변환**
 
 ## **1. 개요**
 
-[https://www.acmicpc.net/problem/1927](https://www.acmicpc.net/problem/1927)
+[https://programmers.co.kr/learn/courses/30/lessons/60058](https://programmers.co.kr/learn/courses/30/lessons/60058)
 
 ## **2. 코드**
 
 Python3
 
 ```python
-import sys
-
-def add(arr, cnt):
-    i = cnt
-    while i != 1 and arr[i//2] > arr[i]:
-        arr[i//2], arr[i] = arr[i], arr[i//2]
-        i = i//2
-
-def minus(arr, cnt):
-    ret, arr[1] = arr[1], arr[cnt+1]
-    i = 1
-    while i*2 < cnt+1:
-        if i*2 < cnt:
-            if arr[i*2] <= arr[i*2+1] and arr[i*2] < arr[i]:
-                arr[i], arr[i*2] = arr[i*2], arr[i]
-                i = i*2
-            elif arr[i*2+1] < arr[i]:
-                arr[i], arr[i*2+1] = arr[i*2+1], arr[i]
-                i = i*2+1
-            else:
-                break
+def fix(u, v):
+    s1 = f'({v})'
+    s2 = ''
+    for s in u[1:-1]:
+        if s=='(':
+            s2 += ')'
         else:
-            if arr[i*2] < arr[i]:
-                arr[i*2], arr[i] = arr[i], arr[i*2]
-                i = i*2
-            else:
-                break
-    return ret
+            s2 += '('
+    return s1+s2
 
-n = int(sys.stdin.readline())
-arr = [0] * (n+1)
-res = []
-cnt = 0
-for _ in range(n):
-    x = int(sys.stdin.readline())
-    if x == 0:
-        if cnt == 0:
-            res.append(0)
+def is_valid(u):
+    stack = 0
+    for i in range(len(u)):
+        if u[i]=='(':
+            stack += 1
         else:
-            cnt -= 1
-            res.append(minus(arr, cnt))
-    else:
-        cnt += 1
-        arr[cnt] = x
-        add(arr, cnt)
-print('\n'.join(map(str, res)))
+            stack -= 1
+        if stack < 0:
+            return False
+    return True
+
+def split_uv(w):
+    if w == '':
+        return w
+    stack = 1 if w[0]=='(' else -1
+    for i in range(1, len(w)):
+        if w[i]=='(':
+            stack += 1
+        else:
+            stack -= 1
+        if stack == 0:
+            if is_valid(w[:i+1]):
+                return w[:i+1] + split_uv(w[i+1:])
+            else:
+                return fix(w[:i+1], split_uv(w[i+1:]))
+
+def solution(p):
+    answer = split_uv(p)
+    return answer
 ```
 
 ## **3. 설명**
 
-1. `heapq`를 사용하지 않고 힙을 직접 구현했다.
-2. 힙이란?
-    1. 힙은 이진완전트리 구조를 띄며, 루트 노드가 최소 또는 최대 값을 가지며, 하위 레벨의 노드로 갈수록 반대의 값을 가진다.
-    2. 값을 추가할 때 (최소힙)
-        1. 마지막 노드에 추가하려는 값 x를 넣는다.
-        2. x와 x의 부모 노드를 비교하여, x의 값이 작다면 서로 교체한다.
-        3. x가 부모노드보다 작을동안 `2`를 반복한다.
-    3. 값을 삭제할 때 (최소힙)
-        1. 루트 노드를 제거한다.
-        2. 마지막 노드 x를 루트 노드로 이동시킨다.
-        3. x와 자식 노드를 비교하여, x의 값이 크다면 서로 교체한다.
-        4. x가 자식 노드보다 클동안 `3`을 반복한다.
-
-## **4. 여정**
-
-1. 성공
-
-## **5. 결과**
-![image](https://user-images.githubusercontent.com/41278416/91873515-12173280-ecb4-11ea-8971-c43f507ee838.png)
+1. 문제에 나와 있는 안내대로 알고리즘을 작성하면 된다.
