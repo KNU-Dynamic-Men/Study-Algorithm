@@ -1,5 +1,4 @@
-# 카카오 2020년 상반기 1차 - 문자열 압축
-
+# 카카오 2020년 상반기 1차 - 자물쇠와 열쇠
 ## 1. 개요
 
 https://programmers.co.kr/learn/courses/30/lessons/60059
