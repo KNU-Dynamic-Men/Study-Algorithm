@@ -39,7 +39,8 @@
 | 7주차 | [비숍](https://www.acmicpc.net/problem/1799) | [부분수열의 합](https://www.acmicpc.net/problem/1182) | [별 찍기 - 10](https://www.acmicpc.net/problem/2447) | | |
 | 8주차 | [동전 1](https://www.acmicpc.net/problem/2293) | [스티커](https://www.acmicpc.net/problem/9465) | [인싸들의 가위바위보](https://www.acmicpc.net/problem/16986) | | |
 | 9주차 | [동전 2](https://www.acmicpc.net/problem/2294) | [트리의 높이와 너비](https://www.acmicpc.net/problem/2250) | [최소 힙](https://www.acmicpc.net/problem/1927) | | |
-| 10주차 | [문자열 압축](https://programmers.co.kr/learn/courses/30/lessons/60057) | [괄호 변환](https://programmers.co.kr/learn/courses/30/lessons/60058) | [자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059) | [가사 검색](https://programmers.co.kr/learn/courses/30/lessons/60060) | |  |
+| 10주차 | [문자열 압축](https://programmers.co.kr/learn/courses/30/lessons/60057) | [괄호 변환](https://programmers.co.kr/learn/courses/30/lessons/60058) | [자물쇠와 열쇠](https://programmers.co.kr/learn/courses/30/lessons/60059) | [가사 검색](https://programmers.co.kr/learn/courses/30/lessons/60060) | |
+| 11주차 | [키패드 누르기](https://programmers.co.kr/learn/courses/30/lessons/67256) | [수식 최대화](https://programmers.co.kr/learn/courses/30/lessons/67257) | [보석 쇼핑](https://programmers.co.kr/learn/courses/30/lessons/67258) | [경주로 건설](https://programmers.co.kr/learn/courses/30/lessons/67259) | |
 
 
 ### :rainbow: Additional Study
