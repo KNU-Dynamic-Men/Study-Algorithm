@@ -22,8 +22,8 @@
 
 
 ### :rainbow: Contributors
-| [qwlake](https://github.com/qwlake) | [이창섭](https://github.com/ventulus95) | [LimeOrangePie](https://github.com/jungin500) | [Roooqee](https://github.com/qufwnfahs) | [Roku_K](https://github.com/rokuta1059) |
-| ---- | ---- | ---- | ---- | ---- |
+| [qwlake](https://github.com/qwlake) | [이창섭](https://github.com/ventulus95) | [LimeOrangePie](https://github.com/jungin500) | [Roooqee](https://github.com/qufwnfahs) | [Roku_K](https://github.com/rokuta1059) | [DaWitChoi](https://github.com/dawit95) |
+| ---- | ---- | ---- | ---- | ---- | ---- |
 
 
 ### :rainbow: Week Study
