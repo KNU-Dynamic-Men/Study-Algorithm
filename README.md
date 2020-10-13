@@ -43,7 +43,7 @@
 | 11주차 | [키패드 누르기](https://programmers.co.kr/learn/courses/30/lessons/67256) | [수식 최대화](https://programmers.co.kr/learn/courses/30/lessons/67257) | [보석 쇼핑](https://programmers.co.kr/learn/courses/30/lessons/67258) | [경주로 건설](https://programmers.co.kr/learn/courses/30/lessons/67259) | |
 | 12주차 | [Elevator](https://github.com/kakao-recruit/2019-blind-2nd-elevator) | | | |
 | 13주차 | [동굴 탐험](https://programmers.co.kr/learn/courses/30/lessons/67260) | [기둥과 보 설치](https://programmers.co.kr/learn/courses/30/lessons/60061) | | |
-| 13주차 | [외벽 점검](https://programmers.co.kr/learn/courses/30/lessons/60062) | [블록 이동하기](https://programmers.co.kr/learn/courses/30/lessons/60063) | | |
+| 14주차 | [외벽 점검](https://programmers.co.kr/learn/courses/30/lessons/60062) | [블록 이동하기](https://programmers.co.kr/learn/courses/30/lessons/60063) | | |
 
 
 ### :rainbow: Additional Study
